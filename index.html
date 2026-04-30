@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Od zera do agenta AI w C#. Microsoft Agent Framework 1.0 i MCP w praktyce</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,900&amp;subset=latin-ext" rel="stylesheet" />
+
+    <!-- 1. Shower Engine (unchanged) -->
+    <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x9.css" />
+
+    <!-- 2. NEW: Refactored main.css (replaces old main.css, badge.css, front-page.css) -->
+    <!--    Put all 9 files (_tokens.css, _base.css, etc.) in the same folder.        -->
+    <!--    main.css uses @import to load them in the correct order.                   -->
+    <link rel="stylesheet" href="vendors/shower-CezaryWalenciuk/styles/main.css" />
+
+    <!-- 3. Prism.js syntax highlighting (unchanged) -->
+    <link rel="stylesheet" href="vendors/prism/custom-prism.css" />
+    <link rel="stylesheet" href="vendors/prism/prism-my-dark.css" />
+    <link rel="stylesheet" href="codegrid-dark.css" />
+
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Od zera do agenta AI w C#. Microsoft Agent Framework 1.0 i MCP w praktyce">
+    <meta property="og:description" content="Presentation for WDI">
+    <meta property="og:url" content="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/">
+    <meta property="og:site_name" content="Od zera do agenta AI w C#. Microsoft Agent Framework 1.0 i MCP w praktyce">
+    <meta property="og:image" content="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/FacebookImageForMainPage.jpg"><meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:title" content="Od zera do agenta AI w C#. Microsoft Agent Framework 1.0 i MCP w praktyce">
+    <meta name="twitter:description" content="Presentation for DataScience Summit 2026">
+    <meta name="twitter:image" content="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/FacebookImageForMainPage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@walenciukc">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/icon/icon16x16.png">
+    <link rel="apple-touch-icon" href="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/icon180x180.png">
+    <link rel="shortcut icon" href="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/icon16x16.png">
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Od zera do agenta AI w C#</h1>
+        <p> Microsoft Agent Framework 1.0 i MCP w praktyce</p>
+    </header>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 1 — Front Page (title slide)                            ║
+         ║  Class: .front-page (from _front-page.css)                     ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide front-page">
+        <div class="details">
+          
+            <h2 class="bigbig"><strong style="font-size: 35px; line-height: 1.3;">
+                <span class="tc-7">Od zera do agenta AI </span>
+                <span class="tc-1">w C#</span><br />
+                <span class="tc-6">Microsoft Agent Framework 1.0 </span><br />
+                <span class="tc-7">i</span>
+                <span class="tc-1"> MCP w praktyce</span>
+            </strong></h2>
+            <h2><a href="https://twitter.com/WalenciukC">@walenciukC</a></h2>
+        </div>
+        <div class="imag">
+            <img src="images/my-avatar.jpg" alt="Speaker" />
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 2 — Shout slide (dark + teal tag)                       ║
+         ║  NEW:   theme-dark tag-teal                                    ║
+         ║  OLD:   creamGrey kkk                                         ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Nowy system klas tematycznych
+        </span></span>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 3 — Splitpoint layout (icon left + bullets right)       ║
+         ║  NEW:   layout-splitpoint > split-image + split-text           ║
+         ║  OLD:   grid-container-slidepoint > SlidePointImage + Text     ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Główny punkt slajdu</li>
+                    <ol class="nonumbers">
+                        <li class="next">Pierwszy podpunkt z animacją</li>
+                        <li class="next">Drugi podpunkt z animacją</li>
+                        <li class="next">Trzeci podpunkt z animacją</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 4 — Shout slide with different tag colors               ║
+         ║  Shows: tag-blue, tag-green, tag-purple, tag-gold              ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-blue">
+        <span class="shout colors"><span>
+            Tag: blue
+        </span></span>
+    </section>
+
+    <section class="slide theme-dark tag-green">
+        <span class="shout colors"><span>
+            Tag: green
+        </span></span>
+    </section>
+
+    <section class="slide theme-dark tag-purple">
+        <span class="shout colors"><span>
+            Tag: purple
+        </span></span>
+    </section>
+
+    <section class="slide theme-dark tag-gold">
+        <span class="shout colors"><span>
+            Tag: gold
+        </span></span>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 5 — Gradient background                                 ║
+         ║  NEW:   theme-gradient-purple                                  ║
+         ║  OLD:   creamPPPGragient                                       ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-gradient-purple">
+        <span class="shout colors"><span>
+            Gradient: purple → magenta
+        </span></span>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 6 — Gradient green                                      ║
+         ║  NEW:   theme-gradient-green                                   ║
+         ║  OLD:   creamGGGragient                                        ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-gradient-green">
+        <span class="shout colors"><span>
+            Gradient: green → purple
+        </span></span>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 7 — Conic gradient                                      ║
+         ║  NEW:   theme-conic-cool                                       ║
+         ║  OLD:   conicG2                                                ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-conic-cool">
+        <span class="shout colors"><span>
+            Conic gradient: cool
+        </span></span>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 8 — Solid theme variants                                ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-happy">
+        <span class="shout colors"><span>
+            Theme: happy (turkusowy)
+        </span></span>
+    </section>
+
+    <section class="slide theme-cream">
+        <span class="shout colors"><span>
+            Theme: cream (ciepły)
+        </span></span>
+    </section>
+
+    <section class="slide theme-dark-green">
+        <span class="shout colors"><span>
+            Theme: dark-green (memory)
+        </span></span>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 9 — Code slide with layout-code grid                    ║
+         ║  NEW:   layout-code > code-header + code-body                  ║
+         ║  OLD:   grid-container > HeaderTitle + PlaceCodeHere            ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 20px; overflow: hidden;">
+                    <code style="line-height: 20px !important;" class="language-cs">
+                        using System;
+
+                        namespace Demo
+                        {
+                            public class HelloWorld
+                            {
+                                public static void Main(string[] args)
+                                {
+                                    Console.WriteLine("Hello from refactored Shower!");
+                                    Console.WriteLine("Tę prezentację napędza:");
+                                    Console.WriteLine("  - _tokens.css  → kolory");
+                                    Console.WriteLine("  - _themes.css  → tła slajdów");
+                                    Console.WriteLine("  - _layouts.css → siatki");
+                                    Console.ReadKey();
+                                }
+                            }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 10 — Code slide with answer panel                       ║
+         ║  NEW:   layout-code-answer > code-header + code-body +         ║
+         ║         code-answer                                            ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide prism over bhgry">
+        <div class="layout-code-answer">
+            <div class="code-header variant-white">
+                <h2>Pytanie i odpowiedź</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 18px; overflow: hidden;">
+                    <code style="line-height: 18px !important;" class="language-cs">
+                        var builder = WebApplication.CreateBuilder(args);
+                        builder.Services.AddControllers();
+                        var app = builder.Build();
+                        app.MapControllers();
+                        app.Run();
+                    </code>
+                </pre>
+            </div>
+            <div class="code-answer">
+                <div class="question">
+                    <h3>Co robi ten kod?</h3>
+                </div>
+                <div class="response">
+                    Tworzy minimalną aplikację ASP.NET Core z kontrolerami.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 11 — Full-bleed image slide                             ║
+         ║  (unchanged — Shower's native .cover works)                    ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-black">
+        <h2 class="shout" style="font-size: 80px;">Slajd ze zdjęciem</h2>
+        <!-- <figure>
+            <img class="cover" src="pictures/screenshot.png" alt="screenshot" />
+        </figure> -->
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 12 — Splitpoint layout with different tag               ║
+         ║  Demonstrates composability: same layout, different theme      ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-blue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/contract.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Kompozycja klas</li>
+                    <ol class="nonumbers">
+                        <li class="next">Ten sam layout-splitpoint</li>
+                        <li class="next">Ale inny tag-blue zamiast tag-teal</li>
+                        <li class="next">Zero dodatkowego CSS</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 13 — Smaller font shout                                 ║
+         ║  Uses utility class: text-heading-md (replaces smallerfont2)   ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors text-heading-md"><span>
+            Mniejszy tekst dzięki klasie .text-heading-md (zastępuje .smallerfont2)
+        </span></span>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE — TWO-ICON LAYOUT (layout-icons-2)                      ║
+         ║  Title top, two images side by side, labels below               ║
+         ║  Screenshot ref: "Bez EventSourcing / Z EventSourcing"          ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark-purple fullscreen">
+        <div class="layout-icons-2">
+            <div class="icons-title">
+                <h3>Chcemy mieć aplikacje z dwoma ścieżkami</h3>
+            </div>
+            <div class="icon-1">
+                <img src="pictures/iconsFr/BADCQRS.png" alt="Bez EventSourcing" />
+            </div>
+            <div class="icon-2">
+                <img src="pictures/iconsFr/FluentValidation.png" alt="Z EventSourcing" />
+            </div>
+            <div class="label-1">
+                <h3>Bez EventSourcing</h3>
+            </div>
+            <div class="label-2">
+                <h3>Z EventSourcing</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE — SPLITPOINT-LIST (layout-splitpoint-list)              ║
+         ║  Image left, compact list with many items right                 ║
+         ║  Screenshot ref: "Jakie paczki NuGet? (Spoiler)"               ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark-green fullscreen">
+        <div class="layout-splitpoint-list">
+            <div class="split-image">
+                <img src="pictures/iconsFr/biblioteki.png" alt="packages" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Jakie paczki NuGet? (Spoiler)</li>
+                    <li>MediatR</li>
+                    <li>AutoMapper</li>
+                    <li>Fluent Validation</li>
+                    <li>Swagger UI</li>
+                    <li>Dapper (zamiast EF Core)</li>
+                    <li>Newtonsoft.Json do serializacji</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE — THREE-ICON LAYOUT (layout-icons-3)                    ║
+         ║  3 columns: image + title + subtitle each                       ║
+         ║  Screenshot ref: "CQRS / Różne Modele / Każdy"                 ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark-blue fullscreen">
+        <div class="layout-icons-3">
+            <div class="icon-1">
+                <img src="pictures/iconsFr/contract.png" alt="CQRS" />
+            </div>
+            <div class="icon-2">
+                <img src="pictures/iconsFr/nswag2.png" alt="Modele" />
+            </div>
+            <div class="icon-3">
+                <img src="pictures/iconsFr/d3.png" alt="Odpowiedzialność" />
+            </div>
+            <div class="label-1">
+                <h3>Command-Query Responsibility Segregation</h3>
+            </div>
+            <div class="label-2">
+                <h3>Różne Modele</h3>
+                <p>Command Do Aktualizacji Danych<br/>Query Do Odczytu</p>
+            </div>
+            <div class="label-3">
+                <h3>Każdy</h3>
+                <p>Ma Swoją Odpowiedzialność</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE — FOUR-ICON LAYOUT (layout-icons-4)                     ║
+         ║  Title top, 4 images in a row, labels below                     ║
+         ║  Screenshot ref: "Czy twoja wiedza jest na czasie"              ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark-purple fullscreen">
+        <div class="layout-icons-4">
+            <div class="icons-title">
+                <h3>Czy twoja wiedza jest na czasie.</h3>
+            </div>
+            <div class="icon-1">
+                <img src="pictures/iconsFr/online-learning.png" alt="Praktyki" />
+            </div>
+            <div class="icon-2">
+                <img src="pictures/iconsFr/biblioteki.png" alt="NuGet" />
+            </div>
+            <div class="icon-3">
+                <img src="pictures/iconsFr/nswag2.png" alt="Architektura" />
+            </div>
+            <div class="icon-4">
+                <img src="pictures/iconsFr/d2.png" alt="Testowalna" />
+            </div>
+            <div class="label-1">
+                <h3>Najlepsze Praktyki?</h3>
+            </div>
+            <div class="label-2">
+                <h3>Paczki NuGet?</h3>
+            </div>
+            <div class="label-3">
+                <h3>Jasna Architektura</h3>
+            </div>
+            <div class="label-4">
+                <h3>Testowalna, Łatwa Do Zarządzania</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE — COLORED TILES (layout-tiles)                          ║
+         ║  Title + grid of colored rectangles with text                   ║
+         ║  Screenshot ref: "Ważne zasady projektowe"                      ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark-purple fullscreen">
+        <div class="layout-tiles">
+            <div class="tiles-title">
+                <h3>Ważne zasady projektowe</h3>
+            </div>
+            <div class="tile sq-orange"><span>Dependency Inversion</span></div>
+            <div class="tile sq-blue"><span>Seperation of Concerns</span></div>
+            <div class="tile sq-pink"><span>Single Responsibility</span></div>
+            <div class="tile sq-green"><span>DRY</span></div>
+            <div class="tile sq-gray"><span>Persistence Ignorance</span></div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE — SPLITPOINT-MIXED (layout-splitpoint-mixed)            ║
+         ║  Image left, grouped items right with yellow section headers    ║
+         ║  Screenshot ref: "Paczka NuGet Fluent Validation"               ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark fullscreen">
+        <div class="layout-splitpoint-mixed">
+            <div class="split-image">
+                <img src="pictures/iconsFr/FluentValidation.png" alt="Fluent Validation" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Paczka NuGet "Fluent Validation"</li>
+                    <li>Używa ona wyrażenia lambda i stylu</li>
+                    <li>extension method</li>
+                    <li class="bold">Może być użyty w projekcie Core</li>
+                    <li>RequestHandler</li>
+                    <li>IRequestHandler</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE — HIGHLIGHT DEMO (all hl-* classes)                     ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-teal raised">
+        <h2 style="border-color: var(--tag-teal);">Podkreślenia tekstu (hl-*)</h2>
+        <ol class="nonumbers">
+            <li><span class="hl-red">hl-red</span> czerwony tekst na czerwonym tle</li>
+            <li><span class="hl-green">hl-green</span> zielony highlight</li>
+            <li><span class="hl-orange">hl-orange</span> pomarańczowy accent (#FF6525)</li>
+            <li><span class="hl-blue">hl-blue</span> turkusowy (#2096BE)</li>
+            <li><span class="hl-blue-bright">hl-blue-bright</span> jasny niebieski</li>
+            <li><span class="hl-blue-cyan">hl-blue-cyan</span> cyjan</li>
+            <li><span class="hl-purple">hl-purple</span> fioletowy</li>
+            <li><span class="hl-black">hl-black</span> czarny</li>
+        </ol>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 14 — BACKWARDS COMPATIBILITY: old classes still work    ║
+         ║  This proves the migration is safe                             ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide creamGrey kkk">
+        <span class="shout colors"><span>
+            Stara klasa "creamGrey kkk" — nadal działa!
+        </span></span>
+    </section>
+
+    <section class="slide creamGrey kkk fullscreen">
+        <div class="grid-container-slidepoint">
+            <div class="SlidePointImage">
+                <img title="icon" src="pictures/iconsFr/biblioteki.png" />
+            </div>
+            <div class="SlidePointText">
+                <ol class="nonumbers">
+                    <li class="bold">Stary HTML — bez zmian</li>
+                    <ol class="nonumbers">
+                        <li class="next">grid-container-slidepoint ✓</li>
+                        <li class="next">SlidePointImage / SlidePointText ✓</li>
+                        <li class="next">Wszystko renderuje się identycznie</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Old gradient alias -->
+    <section class="slide conicG">
+        <span class="shout colors"><span>
+            Stara klasa "conicG" — też działa
+        </span></span>
+    </section>
+
+    <!-- Old code grid -->
+    <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG">
+                <h2 class="headerCODE GG">Stary grid-container</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px; overflow: hidden;">
+                    <code style="line-height: 20px !important;" class="language-cs">
+                        // Stare klasy CSS nadal działają
+                        // HeaderTitle, PlaceCodeHere, headerCODE
+                        // — wszystkie mają aliasy w nowych plikach
+                        Console.WriteLine("Backwards compatible!");
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 15 — Comparison: OLD vs NEW side by side                ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-teal raised">
+        <h2 style="border-color: var(--tag-teal);">Stare vs Nowe klasy CSS</h2>
+        <ol class="nonumbers">
+            <li><span class="hl-red">STARE:</span> creamGrey kkk → <span class="hl-green">NOWE:</span> theme-dark tag-teal</li>
+            <li class="next"><span class="hl-red">STARE:</span> creamPPPGragient → <span class="hl-green">NOWE:</span> theme-gradient-purple</li>
+            <li class="next"><span class="hl-red">STARE:</span> conicG2 → <span class="hl-green">NOWE:</span> theme-conic-cool</li>
+            <li class="next"><span class="hl-red">STARE:</span> SlidePointImage → <span class="hl-green">NOWE:</span> split-image</li>
+            <li class="next"><span class="hl-red">STARE:</span> grid-container → <span class="hl-green">NOWE:</span> layout-code</li>
+        </ol>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 16 — Summary / Architecture                             ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/d3.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Architektura CSS</li>
+                    <ol class="nonumbers">
+                        <li class="next">_tokens.css → jeden plik z kolorami</li>
+                        <li class="next">_slide-themes.css → theme-* + tag-*</li>
+                        <li class="next">_slide-layouts.css → layout-*</li>
+                        <li class="next">_components.css → hl-*, tc-*, badges</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║  SLIDE 17 — Hero layout (centered text with bars)              ║
+         ║  NEW:   layout-hero > hero-top + hero-center + hero-bottom     ║
+         ║  OLD:   Main-grid-container > Main-Text + Background1/2        ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+    <section class="slide theme-gradient-green fullscreen">
+        <div class="layout-hero">
+            <div class="hero-top"></div>
+            <div class="hero-center">
+                <h2>Dziękuję!</h2>
+            </div>
+            <div class="hero-bottom"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SCRIPTS — All unchanged
+         ═══════════════════════════════════════════════════════════════════ -->
+
+    <!-- Gamepad support (optional) -->
+    <script src="vendors/gamepad/gamepad.js"></script>
+
+    <!-- Shower engine -->
+    <script src="vendors/shower/shower.min.js"></script>
+
+    <!-- Gamepad ↔ Shower bridge -->
+    <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+
+    <!-- Prism.js syntax highlighting -->
+    <script src="vendors/prism/prism.js"></script>
+    <script src="vendors/prism/custom-prism.js"></script>
+
+    <!-- Fullscreen badge (top-left corner) -->
+    <footer class="badge badge-top-left">
+        <a href="#" class="fullscreen">Fullscreen</a>
+    </footer>
+
+</body>
+</html>
