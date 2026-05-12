@@ -67,6 +67,1489 @@
             <img src="images/my-avatar.jpg" alt="Speaker" />
         </div>
     </section>
+            <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Jakie są wyzwania w budowaniu systemu wieloagentowego?
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold"> Jakie są wyzwania w budowaniu systemu wieloagentowego?</li>
+                    <ol class="nonumbers">
+                        <li class="next">Zbyt wiele frameworków czyli różne interfejsy i formaty danych</li>
+                        <li class="next">Działa fajnie, ale potem się nie skaluje</li>
+                        <li class="next">Wolna iteracja z lokalnego środowiska na prod</li>
+                        <li class="next">Brak pluginowości czyli system jest zamknięty</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Czego potrzebujemy aby mieć framework agentów
+        </span></span>
+    </section>
+
+    <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Czego potrzebujemy aby mieć framework agentów</li>
+                    <ol class="nonumbers">
+                        <li class="next">Natywne wsparcie dla MCP i A2A</li>
+                        <li class="next">Wsparcie dla wzórców wielo agentowych z wątkami, ponawianiem oraz zdefiniowanymi przepływami</li>
+                        <li class="next">Jeden szkielet z łatwy deployment na test i prod</li>
+                        <li class="next">Wsparie dla telemetrii dla długich cyklów zadań</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Czyżby w końcu mamy to w .NET i w C#?
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Microsoft Agent Framework 1.0</li>
+                    <ol class="nonumbers">
+                        <li class="next">Open Source (licencja MIT)</li>
+                        <li class="next">Community-Driven</li>
+                        <li class="next">Wsparcie dla .NET i Pythona</li>
+                        <li class="next">Łączy on pomysły z Semantic Kernel i AutoGen</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide layout-comparison-table theme-dark">
+    
+    <!-- Nagłówek slajdu -->
+     <!-- <div class="ct-header">
+        <h2>Application Architecture</h2>
+        <p class="ct-subtitle">
+        <span class="tc-1">Microsoft Agent Framework</span>
+        <span> – Agentic AI Framework</span>
+        </p>
+    </div> -->
+    
+    <!-- Tabela porównawcza -->
+    <!-- <table class="ct-table">
+    
+  
+        <thead>
+        <tr class="ct-arrow-row">
+            <th></th>
+            <th>↗</th>
+            <th>↗</th>
+            <th></th>
+        </tr>
+    
+
+        <tr>
+            <th></th>
+            <th>Semantic Kernel</th>
+            <th>AutoGen</th>
+            <th class="ct-col-highlight">Microsoft Agent Framework</th>
+        </tr>
+        </thead>
+    
+        <tbody>
+    
+    
+        <tr>
+            <td class="ct-label">Focus</td>
+            <td>Stable SDK with enterprise connectors, workflows, and observability</td>
+            <td>Experimental multi-agent orchestration from research</td>
+            <td class="ct-col-highlight">Unified SDK combining innovation + enterprise readiness</td>
+        </tr>
+    
+
+        <tr>
+            <td class="ct-label">Interop</td>
+            <td>
+            Plugins, connectors, and support for
+            <span class="ct-pill ct-pill--green">MCP</span>
+            <span class="ct-pill ct-pill--green">A2A</span>
+            <span class="ct-pill ct-pill--green">OpenAPI</span>
+            </td>
+            <td>Tool integration supported; lacks standardized cross-runtime protocols</td>
+            <td class="ct-col-highlight">
+            Built-in connectors,
+            <span class="ct-pill ct-pill--yellow">MCP</span>
+            <span class="ct-pill ct-pill--yellow">A2A</span>
+            <span class="ct-pill ct-pill--yellow">OpenAPI</span>
+            </td>
+        </tr>
+    
+
+        <tr>
+            <td class="ct-label">Memory</td>
+            <td>Multiple vector store connectors and memory store abstraction (Azure SQL, Elasticsearch, MongoDB)</td>
+            <td>Support for in-memory / buffer history + external vector store options (ChromaDB, Mem0)</td>
+            <td class="ct-col-highlight">Pluggable memory across stores, persistent &amp; adaptive memory, hybrid approaches</td>
+        </tr>
+  
+        <tr>
+            <td class="ct-label">Orchestration</td>
+            <td>Deterministic + dynamic (Agent Framework, Process Framework)</td>
+            <td>Dynamic LLM orchestration (debate, reflection, facilitator/worker, group chat)</td>
+            <td class="ct-col-highlight">Deterministic + dynamic (Agent Orchestration, Workflow Orchestration)</td>
+        </tr>
+    
+
+        <tr>
+            <td class="ct-label">Enterprise <br />readiness</td>
+            <td>Telemetry, observability, compliance hooks</td>
+            <td><span class="ct-pill ct-pill--red">Minimal</span></td>
+            <td class="ct-col-highlight">Observability, approvals, CI/CD, long-running durability, hydration</td>
+        </tr>
+    
+        </tbody>
+    </table> -->
+    <table class="ct-table">
+
+    <!-- Wiersz pokazujący ewolucję -->
+    <thead>
+
+
+    <!-- Nagłówki -->
+    <tr>
+        <th></th>
+        <th>Semantic Kernel</th>
+        <th>AutoGen</th>
+        <th class="ct-col-highlight">Microsoft Agent Framework</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <!-- Rola -->
+    <tr>
+        <td class="ct-label">Rola</td>
+        <td>SDK do orkiestracji AI dla systemów enterprise</td>
+        <td>Framework badawczy do systemów multi-agent</td>
+        <td class="ct-col-highlight">Ujednolicona platforma agentowa klasy enterprise</td>
+    </tr>
+
+    <!-- Fundament -->
+    <tr>
+        <td class="ct-label">Fundament</td>
+        <td>Skills, pluginy, workflow i integracje</td>
+        <td>Współpracujące agenty i konwersacyjna orkiestracja</td>
+        <td class="ct-col-highlight">Połączenie orkiestracji enterprise i architektury multi-agent</td>
+    </tr>
+
+    <!-- Interoperacyjność -->
+    <tr>
+        <td class="ct-label">Inter<br />operacyjność</td>
+        <td>
+        Pluginy, konektory oraz wsparcie dla
+        <span class="ct-pill ct-pill--green">MCP</span>
+        <span class="ct-pill ct-pill--green">A2A</span>
+        <span class="ct-pill ct-pill--green">OpenAPI</span>
+        </td>
+
+        <td>
+        Elastyczna integracja agentów i narzędzi,
+        rozwijające się wsparcie protokołów
+        </td>
+
+        <td class="ct-col-highlight">
+        Wbudowane konektory,
+        natywne wsparcie dla
+        <span class="ct-pill ct-pill--yellow">MCP</span>
+        <span class="ct-pill ct-pill--yellow">A2A</span>
+        <span class="ct-pill ct-pill--yellow">OpenAPI</span>
+        </td>
+    </tr>
+
+    <!-- Pamięć -->
+    <tr>
+        <td class="ct-label">Pamięć</td>
+        <td>Abstrakcja pamięci i integracje z bazami wektorowymi</td>
+
+        <td>Pamięć konwersacji oraz zewnętrzne magazyny pamięci</td>
+
+        <td class="ct-col-highlight">
+        Trwała, adaptacyjna i wielowarstwowa pamięć agentów
+        </td>
+    </tr>
+
+    <!-- Orkiestracja -->
+    <tr>
+        <td class="ct-label">Orkiestracja</td>
+
+        <td>
+        Deterministyczna + dynamiczna
+        (workflow, planners, process framework)
+        </td>
+
+        <td>
+        Dynamiczna orkiestracja LLM
+        (debata, reflection, group chat, facilitator/worker)
+        </td>
+
+        <td class="ct-col-highlight">
+        Deterministyczna + dynamiczna orkiestracja agentów i workflow
+        </td>
+    </tr>
+
+    <!-- Gotowość enterprise -->
+    <tr>
+        <td class="ct-label">Gotowość <br />enterprise</td>
+
+        <td>
+        Telemetria, observability, compliance, integracja z Azure
+        </td>
+
+            <td><span class="ct-pill ct-pill--red">Mała, stworzona do badań</span></td>
+   
+
+        <td class="ct-col-highlight">
+        Observability, approvals, CI/CD,
+        durable execution, hydration
+        </td>
+    </tr>
+
+    <!-- Grupa docelowa -->
+    <tr>
+        <td class="ct-label">Grupa <br/>docelowa</td>
+
+        <td>Zespoły enterprise budujące aplikacje AI</td>
+
+        <td>Research i eksperymenty z agentami AI</td>
+
+        <td class="ct-col-highlight">
+        Zespoły budujące produkcyjne systemy agentowe
+        </td>
+    </tr>
+
+    <!-- Ewolucja -->
+    <tr>
+        <td class="ct-label">Ewolucja</td>
+
+        <td>Fundament orkiestracji enterprise AI</td>
+
+        <td>Fundament architektur multi-agent</td>
+
+        <td class="ct-col-highlight">
+        Połączenie Semantic Kernel + AutoGen
+        w jeden ekosystem
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+    </section>
+
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Co to jest Agent?
+        </span></span>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/1.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/2.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Kiedy potrzebujesz systemu wieloagentowego?
+        </span></span>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/3.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/4.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/5.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        using Microsoft.Extensions.AI;
+                        using OllamaSharp;
+
+                        // Klient Ollama — domyślnie http://localhost:11434
+                        var ollama = new OllamaApiClient("http://localhost:11434");
+
+                        // IChatClient z Microsoft.Extensions.AI
+                        IChatClient client = ollama
+                            .AsChatClient("qwen3:8b");
+
+                        var response = await client.GetResponseAsync(
+                            "Co to jest Model Context Protocol?"
+                        );
+
+                        Console.WriteLine(response.Text);
+
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-xml">
+                        &lt;PackageReference Include=&quot;Microsoft.Extensions.AI&quot; 
+                        Version=&quot;10.5.2&quot; /&gt;
+
+                        &lt;PackageReference Include=&quot;OllamaSharp&quot;
+                        Version=&quot;5.*&quot; /&gt;
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+       <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 24px; overflow: hidden;">
+                    <code style="line-height: 24px !important;" class="language-cs">
+                        using Microsoft.Extensions.AI;
+                        using OllamaSharp;
+
+                        IChatClient client = new OllamaApiClient(&quot;http://localhost:11434&quot;)
+                            .AsChatClient(&quot;qwen3:8b&quot;);
+
+                        // Historia czatu — lista wiadomości
+                        var history = new List&lt;ChatMessage&gt;
+                        {
+                            new(ChatRole.System, &quot;Jesteś pomocnym asystentem .NET.&quot;)
+                        };
+
+                        while (true)
+                        {
+                            Console.Write(&quot;\nTy: &quot;);
+                            var input = Console.ReadLine();
+                            if (string.IsNullOrWhiteSpace(input)) break;
+
+                            history.Add(new(ChatRole.User, input));
+
+                            // Przekazujemy całą historię — model &quot;pamięta&quot; kontekst
+                            var response = await client.GetResponseAsync(history);
+
+                            Console.WriteLine($&quot;\nModel: {response.Text}&quot;);
+
+                            // Dodajemy odpowiedź modelu do historii
+                            history.Add(response.Message);
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+           <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        await foreach (var update in
+                            client.GetStreamingResponseAsync(history))
+                        {
+                            Console.Write(update.Text);
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+      <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/6.png" alt="screenshot" />
+        </figure>
+    </section>
+      <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/7.png" alt="screenshot" />
+        </figure>
+    </section>
+      <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/8.png" alt="screenshot" />
+        </figure>
+    </section>
+      <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/9.png" alt="screenshot" />
+        </figure>
+    </section>
+
+      <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/Playwright-01.png" alt="screenshot" />
+        </figure>
+    </section>
+       <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/Playwright-02.png" alt="screenshot" />
+        </figure>
+    </section>
+           <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        using Microsoft.Extensions.AI;
+                        using ModelContextProtocol.Client;
+                        using OpenAI;
+                        using PlaywrightMcpDemo;
+                        using System.ClientModel;
+                        using System.Text;
+                        using System.Text.Json;
+
+                        const string OLLAMA_URL = &quot;http://localhost:11434/v1&quot;;
+                        const string OLLAMA_MODEL = &quot;qwen3:14b&quot;;
+                        const string DEMO_PAGE_URL = &quot;http://localhost:5500/talentflow-onboarding.html&quot;;
+                        const int SCENARIO_TIMEOUT_MINUTES = 20;
+
+                        var scenario = (args.FirstOrDefault() ?? &quot;A&quot;).ToUpperInvariant();
+                        var headless = args.Contains(&quot;--headless&quot;);
+                        var useClaude = args.Contains(&quot;--claude&quot;);
+
+                        var titles = new Dictionary&lt;string, string&gt;
+                        {
+                            [&quot;A&quot;] = &quot;Scenariusz A  -  Autonomiczny Agent HR&quot;,
+                            [&quot;B&quot;] = &quot;Scenariusz B  -  Generator Testow E2E&quot;,
+                            [&quot;C&quot;] = &quot;Scenariusz C  -  Audytor Dostepnosci WCAG&quot;,
+                        };
+
+                        if (!titles.TryGetValue(scenario, out var title))
+                        {
+                            Console.WriteLine(&quot;Uzycie: dotnet run -- [A|B|C] [--headless] [--claude]&quot;);
+                            return;
+                        }
+
+                        ConsoleUi.WriteBanner(title);
+
+                        // ── Sprawdz strone demo ──────────────────────────────────────
+                        Console.Write($&quot;Sprawdzam {DEMO_PAGE_URL} ... &quot;);
+                        if (!await DemoPageChecker.IsAvailableAsync(DEMO_PAGE_URL))
+                        {
+                            ConsoleUi.WriteError(&quot;Strona demo niedostepna!&quot;);
+                            Console.WriteLine(&quot;Uruchom serwer: npx serve wwwroot -l 5500&quot;);
+                            Console.WriteLine(&quot;              lub: python -m http.server 5500 --directory wwwroot&quot;);
+                            return;
+                        }
+                        ConsoleUi.WriteOk(&quot;strona dostepna&quot;);
+
+                        // ── Playwright MCP ───────────────────────────────────────────
+                        Console.WriteLine(&quot;Uruchamianie Playwright MCP Server...&quot;);
+
+                        var (command, arguments) = PlaywrightProcessResolver.Resolve(headless);
+                        Console.WriteLine($&quot;Uruchamianie: {command} {string.Join(&quot; &quot;, arguments)}&quot;);
+
+                        await PlaywrightProcessResolver.VerifyAsync(command, arguments);
+
+                        var transport = new StdioClientTransport(new StdioClientTransportOptions
+                        {
+                            Name = &quot;playwright&quot;,
+                            Command = command,
+                            Arguments = arguments,
+                        });
+                        await using var mcp = await McpClient.CreateAsync(transport);
+                        IList&lt;McpClientTool&gt; mcpTools = await mcp.ListToolsAsync();
+                        ConsoleUi.WriteOk($&quot;Playwright MCP gotowy ({mcpTools.Count} narzedzi)&quot;);
+
+                        // ── Model LLM ────────────────────────────────────────────────
+                        var modelName = useClaude ? &quot;claude-haiku-4-5 (Anthropic API)&quot; : $&quot;{OLLAMA_MODEL} (Ollama)&quot;;
+
+                        IChatClient innerClient = useClaude
+                            ? new Anthropic.AnthropicClient()
+                                .AsIChatClient(&quot;claude-haiku-4-5&quot;)
+                            : new OpenAIClient(
+                                    new ApiKeyCredential(&quot;ollama&quot;),
+                                    new OpenAIClientOptions { Endpoint = new Uri(OLLAMA_URL) })
+                                .GetChatClient(OLLAMA_MODEL)
+                                .AsIChatClient();
+
+                        IChatClient chat = new ChatClientBuilder(innerClient)
+                            .UseFunctionInvocation()
+                            .Build();
+
+                        ConsoleUi.WriteOk($&quot;Model: {modelName}&quot;);
+                        Console.WriteLine();
+
+                        // ── Prompty ──────────────────────────────────────────────────
+                        var (systemPrompt, userPrompt) = await PromptLoader.LoadAsync(scenario, DEMO_PAGE_URL);
+
+                        // ── Agent ────────────────────────────────────────────────────
+                        var messages = new List&lt;ChatMessage&gt;
+                        {
+                            new(ChatRole.System, systemPrompt),
+                            new(ChatRole.User,   userPrompt),
+                        };
+
+                        var chatOptions = new ChatOptions
+                        {
+                            Tools = [.. mcpTools],
+                            MaxOutputTokens = 16384,
+                        };
+
+                        Console.WriteLine(&quot;Agent startuje...&quot;);
+                        ConsoleUi.WriteSeparator();
+                        Console.WriteLine();
+
+                        var output = new StringBuilder();
+                        var toolsUsed = 0;
+                        var toolCalls = new List&lt;string&gt;();
+                        const int MAX_CONTINUATIONS = 5;
+
+                        using var cts = new CancellationTokenSource(TimeSpan.FromMinutes(SCENARIO_TIMEOUT_MINUTES));
+                        ConsoleUi.ResetTimer();
+
+                        try
+                        {
+                            for (int continuation = 0; continuation &lt;= MAX_CONTINUATIONS; continuation++)
+                            {
+                                if (continuation &gt; 0)
+                                {
+                                    ConsoleUi.WriteColored($&quot;\n--- kontynuacja {continuation}/{MAX_CONTINUATIONS} ---&quot;, ConsoleColor.DarkYellow);
+                                    messages.Add(new(ChatRole.User, &quot;Kontynuuj od miejsca w ktorym skonczyles. Nie powtarzaj juz wykonanych krokow.&quot;));
+                                }
+
+                                var turnOutput = new StringBuilder();
+
+                                await foreach (var update in chat.GetStreamingResponseAsync(messages, chatOptions, cts.Token))
+                                {
+                                    if (update.Text is { Length: &gt; 0 } text)
+                                    {
+                                        Console.Write(text);
+                                        output.Append(text);
+                                        turnOutput.Append(text);
+                                    }
+
+                                    foreach (var call in update.Contents.OfType&lt;FunctionCallContent&gt;())
+                                    {
+                                        toolsUsed++;
+                                        toolCalls.Add($&quot;{call.Name} {JsonSerializer.Serialize(call.Arguments)}&quot;);
+                                        ConsoleUi.WriteToolCall(toolsUsed, call.Name, call.Arguments);
+                                    }
+
+                                    foreach (var result in update.Contents.OfType&lt;FunctionResultContent&gt;())
+                                    {
+                                        ConsoleUi.WriteToolResult(result.Result?.ToString());
+                                    }
+                                }
+
+                                var fullText2 = output.ToString();
+                                var done = fullText2.Contains(&quot;EMP-&quot;) ||
+                                        fullText2.Contains(&quot;Onboarding Complete&quot;) ||
+                                        fullText2.Contains(&quot;Employee ID&quot;);
+
+                                if (done)
+                                    break;
+
+                                if (turnOutput.Length &gt; 0)
+                                    messages.Add(new(ChatRole.Assistant, turnOutput.ToString()));
+                            }
+                        }
+                        catch (OperationCanceledException)
+                        {
+                            Console.WriteLine();
+                            ConsoleUi.WriteError($&quot;Timeout! Agent przekroczyl limit {SCENARIO_TIMEOUT_MINUTES} minut.&quot;);
+                        }
+
+                        // ── Post-processing ──────────────────────────────────────────
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        ConsoleUi.WriteSeparator();
+
+                        var fullText = output.ToString().Trim();
+                        var resultsDir = ResultSaver.GetResultsDir();
+                        var activeModel = useClaude ? &quot;claude-haiku-4-5&quot; : OLLAMA_MODEL;
+
+                        switch (scenario)
+                        {
+                            case &quot;A&quot;:
+                                await ResultSaver.SaveScenarioA(fullText, toolCalls, toolsUsed, resultsDir, activeModel);
+                                break;
+                            case &quot;B&quot;:
+                                await ResultSaver.SaveScenarioB(fullText, toolsUsed, resultsDir, activeModel);
+                                break;
+                            case &quot;C&quot;:
+                                await ResultSaver.SaveScenarioC(fullText, toolsUsed, resultsDir, activeModel);
+                                break;
+                        }
+
+                        Console.WriteLine();
+                        Console.WriteLine($&quot;Akcji MCP wykonanych: {toolsUsed}&quot;);
+                        Console.WriteLine($&quot;Czas: {ConsoleUi.Elapsed}&quot;);
+                        ConsoleUi.WriteColored(&quot;Gotowe!&quot;, ConsoleColor.Green);
+
+                        ConsoleUi.WaitForKey();
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+               <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        using System.Diagnostics;
+                        using System.Runtime.InteropServices;
+
+                        namespace PlaywrightMcpDemo;
+
+                        public static class PlaywrightProcessResolver
+                        {
+                            public static (string Command, string[] Arguments) Resolve(bool headless)
+                            {
+                                if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                                {
+                                    return (&quot;npx&quot;, BuildArgs(headless));
+                                }
+
+                                var candidates = new[]
+                                {
+                                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), &quot;nodejs&quot;, &quot;npx.cmd&quot;),
+                                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), &quot;nodejs&quot;, &quot;npx.cmd&quot;),
+                                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), &quot;nvm&quot;, &quot;current&quot;, &quot;npx.cmd&quot;),
+                                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), &quot;nvm&quot;, &quot;v24.14.0&quot;, &quot;npx.cmd&quot;),
+                                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), &quot;nvm&quot;, &quot;v22.0.0&quot;, &quot;npx.cmd&quot;),
+                                };
+
+                                var npxCmd = candidates.FirstOrDefault(File.Exists);
+
+                                if (npxCmd != null)
+                                {
+                                    return (npxCmd, BuildArgs(headless));
+                                }
+
+                                var fallbackArgs = new List&lt;string&gt; { &quot;/c&quot;, &quot;npx&quot; };
+                                fallbackArgs.AddRange(BuildArgs(headless));
+                                return (&quot;cmd&quot;, fallbackArgs.ToArray());
+                            }
+
+                            public static async Task&lt;bool&gt; VerifyAsync(string command, string[] arguments)
+                            {
+                                try
+                                {
+                                    var proc = new Process
+                                    {
+                                        StartInfo = new ProcessStartInfo
+                                        {
+                                            FileName = command,
+                                            Arguments = string.Join(&quot; &quot;, arguments.Select(a =&gt; a.Contains(&#39; &#39;) ? $&quot;\&quot;{a}\&quot;&quot; : a)),
+                                            RedirectStandardError = true,
+                                            UseShellExecute = false,
+                                            CreateNoWindow = true,
+                                        }
+                                    };
+
+                                    proc.Start();
+                                    await Task.Delay(500);
+
+                                    if (proc.HasExited)
+                                    {
+                                        var stderr = await proc.StandardError.ReadToEndAsync();
+                                        ConsoleUi.WriteError(&quot;Proces @playwright/mcp zakonczyl sie natychmiast!&quot;);
+                                        if (proc.ExitCode != 0)
+                                            ConsoleUi.WriteError($&quot;Exit code: {proc.ExitCode}&quot;);
+                                        if (!string.IsNullOrWhiteSpace(stderr))
+                                            ConsoleUi.WriteError($&quot;Stderr: {stderr}&quot;);
+
+                                        Console.WriteLine();
+                                        Console.WriteLine(&quot;Najczestsza przyczyna: brak przegladarek Playwright&quot;);
+                                        Console.WriteLine(&quot;Fix: npx playwright install chromium&quot;);
+                                        Console.WriteLine();
+                                        return false;
+                                    }
+
+                                    proc.Kill(entireProcessTree: true);
+                                    return true;
+                                }
+                                catch (Exception ex)
+                                {
+                                    ConsoleUi.WriteError($&quot;Nie mozna uruchomic npx: {ex.Message}&quot;);
+                                    return false;
+                                }
+                            }
+
+                            private static string[] BuildArgs(bool headless)
+                            {
+                                return headless
+                                    ? [&quot;-y&quot;, &quot;@playwright/mcp@latest&quot;, &quot;--headless&quot;]
+                                    : [&quot;-y&quot;, &quot;@playwright/mcp@latest&quot;];
+                            }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+               <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        public static class PromptLoader
+                        {
+                            private const string PromptsDir = "prompts";
+
+                            public static async Task<(string System, string User)> LoadAsync(string scenario, string demoPageUrl)
+                            {
+                                var key = scenario.ToLowerInvariant();
+
+                                var systemPath = Path.Combine(PromptsDir, $"scenario-{key}-system.md");
+                                var userPath = Path.Combine(PromptsDir, $"scenario-{key}-user.md");
+
+                                if (!File.Exists(systemPath) || !File.Exists(userPath))
+                                    throw new FileNotFoundException($"Brak promptow dla scenariusza {scenario} w {PromptsDir}/");
+
+                                var system = await File.ReadAllTextAsync(systemPath);
+                                var user = await File.ReadAllTextAsync(userPath);
+
+                                user = user.Replace("{{DEMO_PAGE_URL}}", demoPageUrl);
+
+                                return (system, user);
+                            }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                   <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        using System.Text;
+                        using System.Text.RegularExpressions;
+
+                        namespace PlaywrightMcpDemo;
+
+                        public static class ResultSaver
+                        {
+                            public static string GetResultsDir()
+                            {
+                                var timestamp = DateTime.Now.ToString(&quot;yyyy-MM-dd-HHmm&quot;);
+                                var dir = Path.Combine(&quot;results&quot;, timestamp);
+                                Directory.CreateDirectory(dir);
+                                return dir;
+                            }
+
+                            public static async Task SaveScenarioA(string fullText, List&lt;string&gt; toolCalls, int toolsUsed, string resultsDir, string model)
+                            {
+                                var allCalls = string.Join(&quot; &quot;, toolCalls);
+
+                                var nav = toolCalls.Any(c =&gt; c.Contains(&quot;browser_navigate&quot;));
+                                var step1 = (allCalls.Contains(&quot;Jan&quot;) || allCalls.Contains(&quot;firstName&quot;) || allCalls.Contains(&quot;e66&quot;))
+                                        &amp;&amp; (allCalls.Contains(&quot;Kowalski&quot;) || allCalls.Contains(&quot;lastName&quot;) || allCalls.Contains(&quot;e70&quot;))
+                                        &amp;&amp; (allCalls.Contains(&quot;@&quot;) || allCalls.Contains(&quot;email&quot;));
+                                var step2 = allCalls.Contains(&quot;.NET&quot;) || allCalls.Contains(&quot;position&quot;)
+                                        || allCalls.Contains(&quot;e114&quot;) || allCalls.Contains(&quot;B2B&quot;)
+                                        || allCalls.Contains(&quot;startDate&quot;) || allCalls.Contains(&quot;e140&quot;);
+                                var step3 = allCalls.Contains(&quot;GitHub&quot;) || allCalls.Contains(&quot;ThinkPad&quot;)
+                                        || allCalls.Contains(&quot;checkbox&quot;) || allCalls.Contains(&quot;Medicover&quot;)
+                                        || allCalls.Contains(&quot;Datadog&quot;);
+                                var step4 = allCalls.Contains(&quot;Complete&quot;) || allCalls.Contains(&quot;Submit&quot;)
+                                        || fullText.Contains(&quot;Complete&quot;) || fullText.Contains(&quot;submit&quot;);
+                                var empId = Regex.IsMatch(fullText + allCalls, @&quot;EMP-\d+|NVC-\d+|employee.?id&quot;,
+                                                RegexOptions.IgnoreCase);
+
+                                Console.WriteLine();
+                                Console.WriteLine(&quot;Analiza przebiegu:&quot;);
+                                ConsoleUi.WriteStep(&quot;Nawigacja do strony&quot;, nav);
+                                ConsoleUi.WriteStep(&quot;Krok 1 - Personal Data&quot;, step1);
+                                ConsoleUi.WriteStep(&quot;Krok 2 - Employment Details&quot;, step2);
+                                ConsoleUi.WriteStep(&quot;Krok 3 - System Access&quot;, step3);
+                                ConsoleUi.WriteStep(&quot;Krok 4 - Submit&quot;, step4);
+                                ConsoleUi.WriteStep(&quot;Employee ID odczytany&quot;, empId);
+
+                                var steps = new[] { nav, step1, step2, step3, step4, empId };
+                                var passed = steps.Count(x =&gt; x);
+
+                                Console.WriteLine();
+                                ConsoleUi.WriteColored($&quot;Wynik: {passed}/6 krokow zaliczonych&quot;,
+                                    passed == 6 ? ConsoleColor.Green :
+                                    passed &gt;= 4 ? ConsoleColor.Yellow : ConsoleColor.Red);
+
+                                var report = new StringBuilder();
+                                report.AppendLine($&quot;# Scenariusz A — Autonomiczny Agent HR&quot;);
+                                report.AppendLine($&quot;**Data:** {DateTime.Now:yyyy-MM-dd HH:mm}&quot;);
+                                report.AppendLine($&quot;**Model:** {model}&quot;);
+                                report.AppendLine($&quot;**Akcji MCP:** {toolsUsed}&quot;);
+                                report.AppendLine();
+                                report.AppendLine(&quot;## Wyniki&quot;);
+                                report.AppendLine($&quot;- Nawigacja: {(nav ? &quot;✅&quot; : &quot;❌&quot;)}&quot;);
+                                report.AppendLine($&quot;- Krok 1 Personal Data: {(step1 ? &quot;✅&quot; : &quot;❌&quot;)}&quot;);
+                                report.AppendLine($&quot;- Krok 2 Employment: {(step2 ? &quot;✅&quot; : &quot;❌&quot;)}&quot;);
+                                report.AppendLine($&quot;- Krok 3 System Access: {(step3 ? &quot;✅&quot; : &quot;❌&quot;)}&quot;);
+                                report.AppendLine($&quot;- Krok 4 Submit: {(step4 ? &quot;✅&quot; : &quot;❌&quot;)}&quot;);
+                                report.AppendLine($&quot;- Employee ID: {(empId ? &quot;✅&quot; : &quot;❌&quot;)}&quot;);
+                                report.AppendLine();
+                                report.AppendLine($&quot;**Wynik: {passed}/6**&quot;);
+                                report.AppendLine();
+                                report.AppendLine(&quot;## Output agenta&quot;);
+                                report.AppendLine(&quot;```&quot;);
+                                report.AppendLine(fullText);
+                                report.AppendLine(&quot;```&quot;);
+                                report.AppendLine();
+                                report.AppendLine(&quot;## Tool calls&quot;);
+                                for (int i = 0; i &lt; toolCalls.Count; i++)
+                                    report.AppendLine($&quot;{i + 1}. {toolCalls[i]}&quot;);
+
+                                var path = Path.Combine(resultsDir, &quot;scenario-a-report.md&quot;);
+                                await File.WriteAllTextAsync(path, report.ToString());
+                                ConsoleUi.WriteColored($&quot;Zapisano: {path}&quot;, ConsoleColor.Green);
+                            }
+
+                            public static async Task SaveScenarioB(string fullText, int toolsUsed, string resultsDir, string model)
+                            {
+                                var match = Regex.Match(fullText, @&quot;(import \{.*)&quot;, RegexOptions.Singleline);
+                                var code = match.Success ? match.Value : fullText;
+                                code = Regex.Replace(code, @&quot;```\w*\n?|```&quot;, &quot;&quot;).Trim();
+
+                                var specPath = Path.Combine(resultsDir, &quot;onboarding.spec.ts&quot;);
+                                await File.WriteAllTextAsync(specPath, code);
+                                ConsoleUi.WriteColored($&quot;Zapisano: {specPath}&quot;, ConsoleColor.Green);
+                                Console.WriteLine(&quot;   Uruchom: npx playwright test onboarding.spec.ts --headed&quot;);
+
+                                var report = new StringBuilder();
+                                report.AppendLine($&quot;# Scenariusz B — Generator Testow E2E&quot;);
+                                report.AppendLine($&quot;**Data:** {DateTime.Now:yyyy-MM-dd HH:mm}&quot;);
+                                report.AppendLine($&quot;**Model:** {model}&quot;);
+                                report.AppendLine($&quot;**Akcji MCP:** {toolsUsed}&quot;);
+                                report.AppendLine();
+                                report.AppendLine(&quot;## Wygenerowany test&quot;);
+                                report.AppendLine(&quot;```typescript&quot;);
+                                report.AppendLine(code);
+                                report.AppendLine(&quot;```&quot;);
+
+                                var reportPath = Path.Combine(resultsDir, &quot;scenario-b-report.md&quot;);
+                                await File.WriteAllTextAsync(reportPath, report.ToString());
+                                ConsoleUi.WriteColored($&quot;Zapisano: {reportPath}&quot;, ConsoleColor.Green);
+                            }
+
+                            public static async Task SaveScenarioC(string fullText, int toolsUsed, string resultsDir, string model)
+                            {
+                                var report = new StringBuilder();
+                                report.AppendLine($&quot;# Raport Dostepnosci WCAG 2.1 AA&quot;);
+                                report.AppendLine($&quot;**Aplikacja:** TalentFlow HR Onboarding Portal&quot;);
+                                report.AppendLine($&quot;**Data audytu:** {DateTime.Now:yyyy-MM-dd HH:mm}&quot;);
+                                report.AppendLine($&quot;**Audytor:** AI Agent ({model} via Playwright MCP)&quot;);
+                                report.AppendLine($&quot;**Standard:** WCAG 2.1 Level AA&quot;);
+                                report.AppendLine();
+                                report.AppendLine(&quot;---&quot;);
+                                report.AppendLine();
+                                report.AppendLine(fullText);
+
+                                var path = Path.Combine(resultsDir, &quot;accessibility-report.md&quot;);
+                                await File.WriteAllTextAsync(path, report.ToString());
+                                ConsoleUi.WriteColored($&quot;Zapisano: {path}&quot;, ConsoleColor.Green);
+
+                                Console.WriteLine();
+                                Console.WriteLine(&quot;Znalezione problemy:&quot;);
+                                ConsoleUi.WriteColored($&quot;   CRITICAL : {Count(fullText, &quot;CRITICAL&quot;)}&quot;,
+                                    Count(fullText, &quot;CRITICAL&quot;) &gt; 0 ? ConsoleColor.Red : ConsoleColor.DarkGray);
+                                ConsoleUi.WriteColored($&quot;   MAJOR    : {Count(fullText, &quot;MAJOR&quot;)}&quot;,
+                                    Count(fullText, &quot;MAJOR&quot;) &gt; 0 ? ConsoleColor.DarkYellow : ConsoleColor.DarkGray);
+                                ConsoleUi.WriteColored($&quot;   MINOR    : {Count(fullText, &quot;MINOR&quot;)}&quot;, ConsoleColor.Yellow);
+                                ConsoleUi.WriteColored($&quot;   OK       : {Count(fullText, &quot;OK&quot;)}&quot;, ConsoleColor.Green);
+                            }
+
+                            private static int Count(string s, string p) =&gt;
+                                (s.Length - s.Replace(p, &quot;&quot;).Length) / p.Length;
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                   <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                            Jestes certyfikowanym audytorem dostepnosci cyfrowej WCAG 2.1 AA.
+                            Eksplorujesz strony przez Playwright MCP uzywajac browser_snapshot do analizy.
+                            Dokumentujesz KAZDY problem z konkretna lokalizacja i poziomem WCAG.
+
+                            Format problemow w raporcie:
+                            CRITICAL - blokuje uzycie (WCAG A)
+                            MAJOR    - utrudnia znaczaco (WCAG AA)
+                            MINOR    - do poprawki w przyszlosci
+                            OK       - zgodne z WCAG
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                       <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        Przeprowadz pelny audyt WCAG 2.1 AA formularza: {{DEMO_PAGE_URL}}
+
+                        Przejdz przez KAZDY krok (1 do 4) klikajac Continue i sprawdz:
+
+                        PERCEIVABLE:
+                        - Czy pola maja etykiety powiazane przez for/id lub aria-label?
+                        - Czy ikony i przyciski bez tekstu maja aria-label?
+                        - Czy kontrast tekstu spelnia minimum 4.5:1?
+                        - Czy informacje nie sa przekazywane tylko kolorem?
+
+                        OPERABLE:
+                        - Czy wszystko jest dostepne klawiatura (Tab, Enter, Space)?
+                        - Czy focus indicator jest widoczny?
+                        - Czy checkboxy i radio buttons maja proper ARIA?
+
+                        UNDERSTANDABLE:
+                        - Czy wymagane pola sa wyraznie oznaczone?
+                        - Czy lang jest ustawiony na elemencie html?
+                        - Czy struktura naglowkow h1 do h3 jest logiczna?
+
+                        ROBUST:
+                        - Czy role ARIA sa poprawnie uzyte?
+                        - Czy formularz ma poprawna semantyke HTML?
+
+                        Wygeneruj raport Markdown z:
+                        1. Podsumowaniem (liczba problemow per poziom)
+                        2. Lista wszystkich problemow z rekomendacjami naprawy
+                        3. Ocena koncowa w skali 0 do 100
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+       <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/Playwright-01.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            To się nie skaluje
+        </span></span>
+    </section>
+
+
+      <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/MAF/10.png" alt="screenshot" />
+        </figure>
+    </section>
+    
+
+
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Fundamenty które pozwalają nam budować agentów i systemy wieloagentowe
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Fundamenty które pozwalają nam budować agentów i systemy wieloagentowe</li>
+                    <ol class="nonumbers">
+                        <li class="next">MCP : czyli LLM może odpalić metodę programistyczną i dostać dane albo wykonać akcje</li>
+                        <li class="next">A2A : agenci mogą gadać miedzy sobą nie ważne jak są napisani</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Fundamenty które pozwalają nam budować agentów i systemy wieloagentowe</li>
+                    <ol class="nonumbers">
+                        <li class="next">OpenAPI : standardowe interfejsy API do integracji np. Ollama</li>
+                        <li class="next">Niezależnie od dostawcy : agenci mogą działać w kontenerach i w chmurze</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            A czy mamy gotowe UI do tego wszystkiego?
+        </span></span>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/ag-ui.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Protokół AG-UI</li>
+                    <ol class="nonumbers">
+                        <li class="next">Zarządzaniem wątkami pomiędzy kontekstami rozmów</li>
+                        <li class="next">Human in the loop</li>
+                        <li class="next">Streamowanie odpowiedzi agentów przez Server Side Events</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Co jeszcze?
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Pluginowość MAF</li>
+                    <ol class="nonumbers">
+                        <li class="next">Pluginowana moduł pamięć : Redis, pinecone, Qdrant, Elasticsearch, Postgres,</li>
+                        <li class="next">Deklarowanie agentów przy pomocy JSON i YAML</li>
+                        <li class="next">Łączenie się z Azure AI Foundry,Oraclem, MongoDB i tak dalej</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Pamięć i stan konwersacji w MAF
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Tak nasza aplikacja może pamięć kluczowe fakty o zadaniu jak Claude
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Jest też wsparcie dla Reducerów pamięci
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+            Chcemy też łatwiej układać klocki działań agentów
+        </span></span>
+    </section>
+
+
+<section class="slide layout-agent-sequential theme-dark">
+ 
+
+ 
+  <div class="ad-grid canscroll">
+ 
+    <!-- 1. Sequential -->
+    <div class="ad-tile">
+      <div class="ad-tile-title">Sequential</div>
+      <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gSeq1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7dd3f8"/>
+            <stop offset="100%" stop-color="#c4b5fd"/>
+          </linearGradient>
+          <linearGradient id="gSeq2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#93c5fd"/>
+            <stop offset="100%" stop-color="#f0abfc"/>
+          </linearGradient>
+          <linearGradient id="gSeq3" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a5b4fc"/>
+            <stop offset="100%" stop-color="#fda4af"/>
+          </linearGradient>
+          <marker id="arrSeq" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgba(200,210,240,0.6)"/>
+          </marker>
+        </defs>
+        <!-- węzeł 1 -->
+        <rect x="30" y="8" width="60" height="26" rx="5" fill="url(#gSeq1)" opacity="0.85"/>
+        <!-- strzałka -->
+        <line x1="60" y1="34" x2="60" y2="50" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrSeq)"/>
+        <!-- węzeł 2 -->
+        <rect x="30" y="52" width="60" height="26" rx="5" fill="url(#gSeq2)" opacity="0.85"/>
+        <!-- strzałka -->
+        <line x1="60" y1="78" x2="60" y2="94" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrSeq)"/>
+        <!-- węzeł 3 -->
+        <rect x="30" y="96" width="60" height="26" rx="5" fill="url(#gSeq3)" opacity="0.85"/>
+      </svg>
+    </div>
+ 
+    <!-- 2. Concurrent -->
+    <div class="ad-tile">
+      <div class="ad-tile-title">Concurrent</div>
+      <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gCon1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7dd3f8"/>
+            <stop offset="100%" stop-color="#c4b5fd"/>
+          </linearGradient>
+          <linearGradient id="gCon2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a5b4fc"/>
+            <stop offset="100%" stop-color="#fda4af"/>
+          </linearGradient>
+          <marker id="arrCon" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgba(200,210,240,0.6)"/>
+          </marker>
+        </defs>
+        <!-- orchestrator -->
+        <rect x="50" y="8" width="60" height="26" rx="5" fill="url(#gCon1)" opacity="0.85"/>
+        <!-- 3 strzałki w dół -->
+        <line x1="60" y1="34" x2="22" y2="76" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrCon)"/>
+        <line x1="80" y1="34" x2="80" y2="76" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrCon)"/>
+        <line x1="100" y1="34" x2="138" y2="76" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrCon)"/>
+        <!-- 3 agenty -->
+        <rect x="2" y="78" width="40" height="22" rx="4" fill="url(#gCon2)" opacity="0.85"/>
+        <rect x="60" y="78" width="40" height="22" rx="4" fill="url(#gCon2)" opacity="0.85"/>
+        <rect x="118" y="78" width="40" height="22" rx="4" fill="url(#gCon2)" opacity="0.85"/>
+      </svg>
+    </div>
+ 
+    <!-- 3. Handoff -->
+    <div class="ad-tile">
+      <div class="ad-tile-title">Handoff</div>
+      <svg viewBox="0 0 160 150" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gHand1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7dd3f8"/>
+            <stop offset="100%" stop-color="#c4b5fd"/>
+          </linearGradient>
+          <linearGradient id="gHand2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a5b4fc"/>
+            <stop offset="100%" stop-color="#fda4af"/>
+          </linearGradient>
+          <marker id="arrHand" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgba(200,210,240,0.6)"/>
+          </marker>
+        </defs>
+        <!-- Agent A (router, top center) -->
+        <rect x="50" y="8" width="60" height="22" rx="5" fill="url(#gHand1)" opacity="0.85"/>
+        <!-- A→B (lewa ścieżka) -->
+        <line x1="65" y1="30" x2="30" y2="68" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrHand)"/>
+        <!-- A→C (prawa ścieżka) -->
+        <line x1="95" y1="30" x2="126" y2="68" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrHand)"/>
+        <!-- etykiety ścieżek -->
+        <text x="36" y="54" text-anchor="middle" font-size="8" fill="rgba(200,210,240,0.5)">path 1</text>
+        <text x="118" y="54" text-anchor="middle" font-size="8" fill="rgba(200,210,240,0.5)">path 2</text>
+        <!-- Agent B (lewy) -->
+        <rect x="8" y="70" width="44" height="22" rx="4" fill="url(#gHand2)" opacity="0.85"/>
+        <!-- Agent C (prawy) -->
+        <rect x="108" y="70" width="44" height="22" rx="4" fill="url(#gHand2)" opacity="0.85"/>
+        <!-- B→D (B może przekazać dalej) -->
+        <line x1="30" y1="92" x2="30" y2="118" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrHand)"/>
+        <!-- Agent D (pod B) -->
+        <rect x="8" y="120" width="44" height="22" rx="4" fill="url(#gHand2)" opacity="0.6"/>
+      </svg>
+    </div>
+ 
+    <!-- 4. Group Chat -->
+    <div class="ad-tile">
+      <div class="ad-tile-title">Group Chat</div>
+      <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gGC1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7dd3f8"/>
+            <stop offset="100%" stop-color="#c4b5fd"/>
+          </linearGradient>
+          <linearGradient id="gGC2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a5b4fc"/>
+            <stop offset="100%" stop-color="#fda4af"/>
+          </linearGradient>
+          <marker id="arrGC" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgba(200,210,240,0.6)"/>
+          </marker>
+        </defs>
+        <!-- worker box -->
+        <rect x="35" y="10" width="70" height="26" rx="5" fill="url(#gGC1)" opacity="0.85"/>
+        <text x="70" y="27" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="600">worker</text>
+        <!-- pętla (łuk) -->
+        <path d="M 28,36 C 5,50 5,95 28,108" stroke="rgba(200,210,240,0.55)" stroke-width="1.5" fill="none" marker-end="url(#arrGC)"/>
+        <!-- reviewer box -->
+        <rect x="35" y="106" width="70" height="26" rx="5" fill="url(#gGC2)" opacity="0.85"/>
+        <text x="70" y="123" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="600">reviewer</text>
+        <!-- strzałka reviewer→worker (prawa strona) -->
+        <path d="M 112,118 C 136,100 136,52 112,38" stroke="rgba(200,210,240,0.55)" stroke-width="1.5" fill="none" marker-end="url(#arrGC)"/>
+      </svg>
+    </div>
+ 
+    <!-- 5. Magentic -->
+    <div class="ad-tile">
+      <div class="ad-tile-title">Magentic</div>
+      <svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gMag1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7dd3f8"/>
+            <stop offset="100%" stop-color="#c4b5fd"/>
+          </linearGradient>
+          <linearGradient id="gMag2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a5b4fc"/>
+            <stop offset="100%" stop-color="#fda4af"/>
+          </linearGradient>
+          <marker id="arrMag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgba(200,210,240,0.6)"/>
+          </marker>
+        </defs>
+        <!-- orchestrator -->
+        <rect x="50" y="10" width="65" height="24" rx="5" fill="url(#gMag1)" opacity="0.85"/>
+        <!-- notes icon (prawy górny) -->
+        <rect x="132" y="12" width="26" height="32" rx="3" fill="#2a2a2a" stroke="rgba(200,210,240,0.3)" stroke-width="1"/>
+        <line x1="137" y1="20" x2="153" y2="20" stroke="rgba(200,210,240,0.5)" stroke-width="1.2"/>
+        <line x1="137" y1="25" x2="153" y2="25" stroke="rgba(200,210,240,0.5)" stroke-width="1.2"/>
+        <line x1="137" y1="30" x2="148" y2="30" stroke="rgba(200,210,240,0.5)" stroke-width="1.2"/>
+        <!-- strzałki do notki -->
+        <line x1="115" y1="22" x2="132" y2="22" stroke="rgba(200,210,240,0.4)" stroke-width="1.2"/>
+        <!-- fan-out -->
+        <line x1="65" y1="34" x2="28" y2="82" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrMag)"/>
+        <line x1="82" y1="34" x2="82" y2="82" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrMag)"/>
+        <line x1="98" y1="34" x2="120" y2="82" stroke="rgba(200,210,240,0.5)" stroke-width="1.5" marker-end="url(#arrMag)"/>
+        <!-- agenci -->
+        <rect x="8" y="84" width="40" height="22" rx="4" fill="url(#gMag2)" opacity="0.85"/>
+        <rect x="62" y="84" width="40" height="22" rx="4" fill="url(#gMag2)" opacity="0.85"/>
+        <rect x="115" y="84" width="40" height="22" rx="4" fill="url(#gMag2)" opacity="0.85"/>
+        <!-- strzałki wsteczne do orchestratora -->
+        <line x1="28" y1="84" x2="65" y2="36" stroke="rgba(200,210,240,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arrMag)"/>
+        <line x1="82" y1="84" x2="82" y2="36" stroke="rgba(200,210,240,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arrMag)"/>
+        <line x1="120" y1="84" x2="98" y2="36" stroke="rgba(200,210,240,0.3)" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arrMag)"/>
+      </svg>
+    </div>
+ 
+    <!-- 6. Workflow Process -->
+       <div class="ad-tile">
+      <div class="ad-tile-title">Workflow Process</div>
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gWF1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7dd3f8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+          <linearGradient id="gWF2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#fda4af"/></linearGradient>
+          <marker id="arrWF" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(200,210,240,0.6)"/></marker>
+        </defs>
+        <!-- Wiersz 1 -->
+        <rect x="4"   y="10" width="52" height="24" rx="4" fill="url(#gWF1)" opacity="0.85"/>
+        <line x1="56"  y1="22" x2="72"  y2="22" stroke="rgba(200,210,240,0.55)" stroke-width="1.5" marker-end="url(#arrWF)"/>
+        <rect x="74"  y="10" width="52" height="24" rx="4" fill="url(#gWF1)" opacity="0.85"/>
+        <line x1="126" y1="22" x2="142" y2="22" stroke="rgba(200,210,240,0.55)" stroke-width="1.5" marker-end="url(#arrWF)"/>
+        <rect x="144" y="10" width="52" height="24" rx="4" fill="url(#gWF1)" opacity="0.85"/>
+        <!-- Strzałki w dół -->
+     
+        <line x1="170" y1="34" x2="170" y2="54" stroke="rgba(200,210,240,0.45)" stroke-width="1.3" marker-end="url(#arrWF)"/>
+        <!-- Wiersz 2 -->
+        <rect x="4"   y="56" width="52" height="24" rx="4" fill="url(#gWF2)" opacity="0.85"/>
+        <line x1="56"  y1="68" x2="72"  y2="68" stroke="rgba(200,210,240,0.55)" stroke-width="1.5" marker-end="url(#arrWF)"/>
+        <rect x="74"  y="56" width="52" height="24" rx="4" fill="url(#gWF2)" opacity="0.85"/>
+        <line x1="126" y1="68" x2="142" y2="68" stroke="rgba(200,210,240,0.55)" stroke-width="1.5" marker-end="url(#arrWF)"/>
+        <rect x="144" y="56" width="52" height="24" rx="4" fill="url(#gWF2)" opacity="0.85"/>
+      </svg>
+    </div>
+ 
+  </div><!-- /.ad-grid -->
+ 
+</section>
+        <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Workflow w MAF</li>
+                    <ol class="nonumbers">
+                        <li class="next">Silne typowanie w wiadomościach pomiędzy komponentami</li>
+                        <li class="next">Struktura grafowa z check</li>
+                        <li class="next">Dynamiczne ścieżki też wspierane</li>
+                        <li class="next">Mówimy tu także o kodzie nie tylko opracach agentów</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+           <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Workflow w MAF</li>
+                    <ol class="nonumbers">
+                        <li class="next">Checkpointy czyli zapisywanie stanu i wznawianie przy długich zadaniach</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+            <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+           Jak to nie wystarczy też można to opakować w maszynę stanów z statless
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+           A dokumentacja?
+        </span></span>
+    </section>
+        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-01.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-02.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-03.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-04.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-05.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-06.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-07.png" alt="screenshot" />
+        </figure>
+    </section>
+                <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/github-08.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+          Demo
+        </span></span>
+    </section>
+            <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Co chcemy zbudować?</li>
+                    <ol class="nonumbers">
+                        <li class="next">Silne typowanie w wiadomościach pomiędzy komponentami</li>
+                        <li class="next">Struktura grafowa z check</li>
+                        <li class="next">Dynamiczne ścieżki też wspierane</li>
+                        <li class="next">Mówimy tu także o kodzie nie tylko opracach agentów</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+                <section class="slide theme-dark tag-teal">
+        <span class="shout colors"><span>
+         Podsumowanie
+        </span></span>
+    </section>
+                <section class="slide theme-dark tag-teal fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold">Podsumowanie</li>
+                    <ol class="nonumbers">
+                        <li class="next">Silne typowanie w wiadomościach pomiędzy komponentami</li>
+                        <li class="next">Struktura grafowa z check</li>
+                        <li class="next">Dynamiczne ścieżki też wspierane</li>
+                        <li class="next">Mówimy tu także o kodzie nie tylko opracach agentów</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
 
     <!-- ╔══════════════════════════════════════════════════════════════════╗
          ║  SLIDE 2 — Shout slide (dark + teal tag)                       ║
@@ -79,11 +1562,7 @@
         </span></span>
     </section>
 
-    <!-- ╔══════════════════════════════════════════════════════════════════╗
-         ║  SLIDE 3 — Splitpoint layout (icon left + bullets right)       ║
-         ║  NEW:   layout-splitpoint > split-image + split-text           ║
-         ║  OLD:   grid-container-slidepoint > SlidePointImage + Text     ║
-         ╚══════════════════════════════════════════════════════════════════╝ -->
+
     <section class="slide theme-dark tag-teal fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
