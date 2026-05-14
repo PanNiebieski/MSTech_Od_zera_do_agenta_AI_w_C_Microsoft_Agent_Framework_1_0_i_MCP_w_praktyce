@@ -219,6 +219,9 @@
 .slide.tag-olive span span  { background-color: var(--tag-olive);  color: black; }
 .slide.tag-gold span span   { background-color: var(--tag-gold);   color: black; }
 .slide.tag-teal span span   { background-color: var(--tag-teal);   color: black; }
+.slide.tag-darkgreen span span   { background-color: var(--tag-darkgreen);   color: white; }
+.slide.tag-darkblue span span   { background-color: var( --tag-darkblue);   color: white; }
+.slide.tag-darkestblue span span   { background-color: var( --tag-darkestblue);   color: white; }
 
 /* ── Memory theme (special variant of dark-green) ────────────────────────── */
 .slide.theme-memory {

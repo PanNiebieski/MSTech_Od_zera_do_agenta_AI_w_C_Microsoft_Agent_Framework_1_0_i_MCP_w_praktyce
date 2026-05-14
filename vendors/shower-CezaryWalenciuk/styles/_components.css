@@ -213,3 +213,4 @@
 .blue2  { background-color: rgb(0, 153, 255) !important; color: white !important; padding: 5px; }
 .blue3  { background-color: rgb(0, 225, 255); color: white; padding: 5px; }
 .bold   { font-weight: bold; background-color: rgb(255, 255, 62) !important; }
+.bold2   { font-weight: bold; background-color: var(--tag-darkestblue) !important; color:white !important; border-color: rgb(36, 36, 36) !important; }
