@@ -222,6 +222,8 @@
 .slide.tag-darkgreen span span   { background-color: var(--tag-darkgreen);   color: white; }
 .slide.tag-darkblue span span   { background-color: var( --tag-darkblue);   color: white; }
 .slide.tag-darkestblue span span   { background-color: var( --tag-darkestblue);   color: white; }
+.slide.tag-darkpurple span span   { background-color: var( --tag-darkpurple);   color: white; }
+
 
 /* ── Memory theme (special variant of dark-green) ────────────────────────── */
 .slide.theme-memory {
