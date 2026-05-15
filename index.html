@@ -2068,8 +2068,140 @@
                     <li class="bold2">Custom events </li>
                     <ol class="nonumbers">
                         <li class="next">Type compatibility — czy typy wiadomości pasują między połączonymi executorami</li>
-                        <li class="next">Graph connectivity — czy wszystkie executory są osiągalne z executora startowego/li>
+                        <li class="next">Graph connectivity — czy wszystkie executory są osiągalne z executora startowego</li>
                         <li class="next">Edge validation — brak duplikatów, brak nieprawidłowych połączeń</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+        Middleware — dlaczego są fajne
+        </span></span>
+    </section>
+
+                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Middleware</li>
+                    <ol class="nonumbers">
+                        <li class="next">LoggingMiddleware</li>
+                        <li class="next">RetryMiddleware</li>
+                        <li class="next">TokenTrackingMiddleware</li>
+                               <li class="next">AuditFunctionMiddleware</li>
+                        <li class="next">InputValidationMiddleware</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                  <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Middleware</li>
+                    <ol class="nonumbers">
+                        <li class="next">Request → Logging → Retry → TokenTracking → Guardrails → FunctionAudit → FunctionValidation → Agent</li>
+                        <li class="next">Separacja odpowiedzialności — agent nie wie że jest logowany, retry'owany, audytowany. Każda warstwa robi jedną rzecz./li>
+                        <li class="next">Composable — middleware składasz jak klocki. Researcher ma inny zestaw niż Copywriter:</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                          <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Middleware</li>
+                    <ol class="nonumbers">
+                        <li class="next">Reużywalność — ten sam LoggingMiddleware działa z każdym agentem.</li>
+                        <li class="next">Testowalna architektura — możesz testować middleware w izolacji od agenta.</li>
+                        <li class="next">Metryki centralne — MiddlewareMetrics zbiera dane ze wszystkich warstw:</li>
+                               <li class="next">Deterministyczne — w przeciwieństwie do guardrails w prompcie, middleware to kod C# z gwarancją wykonania. Model nie "zapomni" o retry.</li>
+
+                </ol>
+            </div>
+        </div>
+    </section>
+                    <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+        Guardrails — dlaczego są fajne
+        </span></span>
+    </section>
+                              <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">W kodzie 3 guardrails:</li>
+                    <ol class="nonumbers">
+                        <li class="next">ContentPolicyGuardrail  :  redaktuje dane wrażliwe z outputu:</li>
+                        <li class="next">BrandSafetyGuardrail : Czy output nie wspomina konkurencji (lista: CompetitorA, CompetitorB)</li>
+                        <li class="next">OutputLengthGuardrail :  obcina output powyżej 3000 znaków.</li>
+                              
+                </ol>
+            </div>
+        </div>
+    </section>
+              <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        public enum GuardrailAction { Block, Modify, Warn }
+
+                        Block — output zablokowany, zwrócony komunikat błędu
+                        Modify — output zmodyfikowany (np. zredagowane PII)
+                        Warn — ostrzeżenie w logach, output przepuszczony
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                                  <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego guardrails w kodzie są lepsze niż w prompcie:</li>
+                    <ol class="nonumbers">
+                        <li class="next">Deterministyczne — regex na numery telefonów ZAWSZE zadziała. Prompt "nie podawaj numerów telefonów" może być zignorowany.</li>
+                        <li class="next">Audytowalne — każda interwencja guardrail jest logowana w MiddlewareMetrics:</li>
+                        <li class="next">Composable — guardrails to klasy, składasz je w pipeline per agent.</li>
+                              
+                </ol>
+            </div>
+        </div>
+    </section>
+                                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego guardrails w kodzie są lepsze niż w prompcie:</li>
+                    <ol class="nonumbers">
+                        <li class="next">Reużywalne — ta sama instancja contentPolicy chroni i Copywritera i Redaktora.</li>
+                        <li class="next">Pre i post execution — możesz blokować zarówno input (zanim agent zobaczy prompt) jak i output (zanim odpowiedź trafi do użytkownika).</li>
+
+                              
                 </ol>
             </div>
         </div>
@@ -2098,6 +2230,37 @@
             </div>
         </div>
     </section>
+                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Executor jako czysta abstrakcja — zamiast "agent robi wszystko", masz executory z jasnym kontraktem (typ wejścia → typ wyjścia). Kod jest czytelny, testowalny, reużywalny. W SK agent z 10 pluginami to monolit; w MAF to 10 executorów z jednym pluginem każdy.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                          <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Middleware na 3 poziomach — SK miał filtry (prompt/function), ale bez wyraźnej separacji. MAF ma:</li>
+                         <li class="next">Agent Run Middleware (logowanie, retry, guardrails)</li>
+                            <li class="next">Function Calling Middleware (audit, walidacja narzędzi)</li>
+                               <li class="next">IChatClient Middleware (tracking tokenów)Każdy poziom to inny punkt interwencji.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
                   <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
@@ -2108,6 +2271,34 @@
                     <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
                     <ol class="nonumbers">
                         <li class="next">Graph-based workflows — SK miał plannery (funkcyjny, sekwencyjny) ale nie miał prawdziwego grafu z executorami, fan-out/fan-in, barierami synchronizacji, typowaniem wiadomości. MAF daje pełną kontrolę nad przepływem z walidacją na etapie budowania.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Dependency Injection agentów — w SK agent tworzył się wewnątrz kernela. W MAF agent jest wstrzykiwany z zewnątrz:</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                          <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Streaming + eventy jako first-class — w SK streaming był dolepiony. W MAF workflow produkuje strumień eventów (WatchStreamAsync()), które możesz konsumować w dowolny sposób (konsola, websocket, kolejka).</li>
                 </ol>
             </div>
         </div>
