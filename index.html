@@ -138,6 +138,11 @@
                 </ol>
             </div>
         </div>
+    </section>    
+    <section class="slide theme-dark tag-darkestblue">
+        <span class="shout colors"><span>
+            Microsoft Agent Framework 1.0 został oficjalnie wydany 3 kwietnia 2026
+        </span></span>
     </section>
 
     <section class="slide layout-comparison-table theme-dark">
@@ -1426,6 +1431,11 @@
   </div><!-- /.ad-grid -->
  
 </section>
+            <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Chcemy budować system z klocków
+        </span></span>
+    </section>
         <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
@@ -1516,8 +1526,45 @@
     </section>
             <section class="slide theme-dark tag-darkblue">
         <span class="shout colors"><span>
-          Demo
+          Demo czyli co chcemy zbudować
         </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Co chcem pokazać w demo?</li>
+                    <ol class="nonumbers">
+                        <li class="next">Workflow w MAF który będzie nam tworzył wpisy na Social Media</li>
+                        <li class="next">Każdy etap powinnien kończyć się Human in the loop czyli zatwierdzeniem</li>
+                        <li class="next">Pokazać użycie Skills, MCP jako server oraz metod w C#</li>
+                        <li class="next">Middleware do wprowadzeniach logowania i śledzenia tokenów oraz "guardrails" </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Stworzyłem 4 wersje tego projektu, a ja wam pokaże najlepszą
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Architektura agentowa</li>
+                    <ol class="nonumbers">
+                        <li class="next">Graph-based workflow (graf skierowany z executorami jako węzłami i krawędziami jako przepływem danych</li>
+                        <li class="next">Fan-out / Fan-in (równoległa praca Copywritera i Stratega, potem bariera synchronizacyjna w Aggregatorze)</li>
+                </ol>
+            </div>
+        </div>
     </section>
             <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
@@ -1526,16 +1573,658 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Co chcemy zbudować?</li>
+                    <li class="bold2">Wzorce enterprise</li>
                     <ol class="nonumbers">
-                        <li class="next">Silne typowanie w wiadomościach pomiędzy komponentami</li>
-                        <li class="next">Struktura grafowa z check</li>
-                        <li class="next">Dynamiczne ścieżki też wspierane</li>
-                        <li class="next">Mówimy tu także o kodzie nie tylko opracach agentów</li>
-                    </ol>
+                        <li class="next">Dependency Injection agentów (executory przyjmują gotowego AIAgent z zewnątrz)</li>
+                        <li class="next">Middleware pipeline (wzorzec "cebulkowy" znany z ASP.NET Core)</li>
+                        <li class="next">Human-in-the-Loop przez RequestPort (gwarancja zatrzymania workflow)</li>
+                        <li class="next">Audit log z walidacją post-mortem (każda decyzja HITL jest logowana)</li>
                 </ol>
             </div>
         </div>
+    </section>
+                <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+           IChatClient — ujednolicona abstrakcja modelu
+        </span></span>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        IChatClient chatClient = new Anthropic.AnthropicClient()
+                            .AsIChatClient("claude-haiku-4-5");
+
+                            //MAF jest zbudowany na IChatClient z Microsoft.Extensions.AI:
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+   <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+           Można podmienić providera (OpenAI, Azure, Ollama...) bez zmiany kodu agentów.
+        </span></span>
+    </section>
+       <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+           Middleware na IChatClient (rate limiting, logging, retry) działa transparentnie.
+        </span></span>
+    </section>
+
+            <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Wyzwanie z Human-in-the-Loop (HITL)
+        </span></span>
+    </section>
+                <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Human-in-the-Loop (HITL) na dwa sposoby</li>
+                    <ol class="nonumbers">
+                        <li class="next">ApprovalRequiredAIFunction blokuje tylko jeśli agent wywoła tool — agent może go pominąć</li>
+                        <li class="next">RequestPort blokuje cały workflow — gwarancja bezwarunkowa, agent nie może ominąć</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          RequestPort jest executorem w grafie workflow. Workflow nie może go ominąć — jest częścią grafu, nie opcjonalnym narzędziem agenta.
+        </span></span>
+    </section>
+    
+            <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        // W event loop klienta:
+                        if (evt is RequestInfoEvent ri)
+                        {
+                            // Wyświetl podsumowanie użytkownikowi
+                            // Pobierz decyzję (t/n + feedback)
+                            var decision = new ApprovalDecision(approved, feedback);
+                            await run.SendResponseAsync(
+                                evt.Request.CreateResponse(decision));
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                    <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Wywołanie Skills (AgentSkillsProvider)
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+                Skills to paczki wiedzy domenowej w formacie SKILL.md — markdown z instrukcjami, które agent ładuje na żądanie (progressive disclosure). Nie upychamy wszystkiego w system prompt.
+        </span></span>
+    </section>
+                    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Trzy fazy ładowania:</li>
+                    <ol class="nonumbers">
+                        <li class="next">Advertise (~100 tokenów/skill) — nazwy i opisy w system prompt</li>
+                        <li class="next">Load (< 5000 tokenów) — pełne instrukcje SKILL.md gdy task pasuje</li>
+                        <li class="next">Read resources (w razie potrzeby) — dodatkowe pliki, szablony, skrypty</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+         <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        var skillsProvider = new AgentSkillsProvider(
+                            Path.Combine(AppContext.BaseDirectory, "skills"));
+
+                        // Podpięcie do agenta jako context provider:
+                        _agent = new ChatClientAgent(chatClient, new ChatClientAgentOptions
+                        {
+                            Name = "Copywriter",
+                            AIContextProviders = [skillsProvider],
+                            ChatOptions = new() { Instructions = "..." }
+                        });
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                        <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          AgentSkillsProvider skanuje katalog skills/, odkrywa pliki SKILL.md, rejestruje je
+        </span></span>
+    </section>
+                        <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Trzy sposoby definiowania skills (.NET)</li>
+                    <ol class="nonumbers">
+                        <li class="next">File-based — katalog z SKILL.md (jak w kodzie)</li>
+                        <li class="next">Code-defined — AgentInlineSkill — dynamiczne, w kodzie C#</li>
+                        <li class="next">Class-based — klasa dziedzicząca po AgentClassSkill < T ></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                            <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Wywołanie serwera MCP 
+        </span></span>
+    </section>
+             <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        // Połączenie z serwerem MCP (HTTP transport):
+                        await using var mcpClient = await McpClient.CreateAsync(
+                            new HttpClientTransport(new HttpClientTransportOptions
+                            {
+                                Endpoint = new Uri(&quot;http://localhost:2001/mcp&quot;)
+                            }));
+
+                        // Pobranie listy narzędzi:
+                        IList&lt;McpClientTool&gt; mcpTools = await mcpClient.ListToolsAsync();
+
+                        // Przekazanie narzędzi do agenta:
+                        _agent = new ChatClientAgent(chatClient, new ChatClientAgentOptions
+                        {
+                            ChatOptions = new()
+                            {
+                                Instructions = &quot;...&quot;,
+                                Tools = [.. mcpTools]  // spread operator
+                            }
+                        });
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                            <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Wywołanie metody C# jako narzędzia agenta
+        </span></span>
+    </section>
+             <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        ChatOptions = new()
+                        {
+                            Tools = [AIFunctionFactory.Create(GetLinkedInTrends)]
+                        }
+
+                        [Description(&quot;Sprawdza popularne trendy na LinkedIn w kategorii tech/AI&quot;)]
+                        static string GetLinkedInTrends(
+                            [Description(&quot;Kategoria, np. &#39;AI&#39;, &#39;.NET&#39;&quot;)] string category)
+                        {
+                            return $&quot;Top trendy w kategorii \&quot;{category}\&quot; (symulacja): ...&quot;;
+                        }
+
+                        //Kluczowa różnica vs Semantic Kernel
+
+                        //W SK trzeba było: stworzyć plugin 
+                            → zarejestrować go w Kernel 
+                            → oznaczyć [KernelFunction]. 
+
+                        //W MAF wystarczy zwykła metoda C# + AIFunctionFactory.Create() 
+                            — zero boilerplate'u, zero zależności od obiektu Kernel.
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Executor jako warstwa abstrakcji
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Executor to fundamentalny klocek lego w MAF. 
+        </span></span>
+    </section>
+                <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Co robi klocek lego Executor:</li>
+                    <ol class="nonumbers">
+                        <li class="next">Odbiera typowane wiadomości (Executor&lt;TInput&gt; lub Executor&lt;TInput, TOutput&gt;)</li>
+                        <li class="next">Wykonuje operacje (może być AI agent, może być deterministyczny kod)</li>
+                        <li class="next">Produkuje wyjście (typowane wiadomości do następnych executorów) i emituje zdarzenia</li>
+                        <li class="next">Ma unikalny identyfikator w workflow (np. "Researcher", "Copywriter")</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Co robi klocek lego Executor:</li>
+                    <ol class="nonumbers">
+                        <li class="next">Może korzystać z IWorkflowContext do zarządzania stanem i komunikacji/li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/tuTabela-01.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        // Executor z typowanym wejściem i wyjściem:
+                        public partial class RedaktorExecutor : Executor&lt;EditorialInput, FinalPost&gt;
+
+                        // Executor z wejściem bez typowanego wyjścia (wysyła ręcznie):
+                        public partial class AggregatorExecutor() : Executor&lt;object&gt;(&quot;Aggregator&quot;)
+
+                        // Executor z wejściem i YieldOutput:
+                        public partial class PublishExecutor() : Executor&lt;FinalPost&gt;(&quot;Publish&quot;)
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Executor zapewnia separację: każdy krok jest niezależny, testowalny, może być AI lub zwykłym kodem.
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Executor NIE jest agentem AI. Executor to warstwa orkiestracyjna, która używa agenta. Agent jest wstrzykiwany z zewnątrz
+        </span></span>
+    </section>
+  <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        // Executor przyjmuje gotowego AIAgent — nie tworzy go sam
+                        public ResearcherExecutor(AIAgent agent) : base("Researcher")
+                        {
+                            _agent = agent;
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Workflow defininiowany jako graf executorów z krawędziami definiującymi przepływ danych i zależności
+        </span></span>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        var workflow = new WorkflowBuilder(researcher)
+                            .AddEdge(researcher, research.Prepare)
+                            .AddEdge(research.Prepare, research.Port)
+                            // ...
+                            .AddFanOutEdge(research.Gate, [copywriter, strateg])
+                            .AddFanInBarrierEdge(fanInSources, aggregator)
+                            // ...
+                            .Build();
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Workflow to także wbudowana architekrua event streaming
+        </span></span>
+    </section>
+                   <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        await foreach (WorkflowEvent evt in run.WatchStreamAsync())
+                        {
+                            EventAction action = evt switch
+                            {
+                                ResearchCompletedEvent e => renderer.HandleResearchCompleted(e),
+                                RequestInfoEvent ri     => await renderer.HandleHITL(ri, run),
+                                ExecutorFailedEvent e   => renderer.HandleError(e),
+                                WorkflowOutputEvent e   => renderer.HandleOutput(e),
+                                _ => EventAction.Next
+                            };
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Framework events (wbudowane w MAF):</li>
+                    <ol class="nonumbers">
+                        <li class="next">ExecutorCompletedEvent — executor zakończył pracę</li>
+                        <li class="next">ExecutorFailedEvent — executor rzucił wyjątek</li>
+                        <li class="next">WorkflowOutputEvent — workflow wyprodukował finalny output</li>
+                        <li class="next">AgentResponseUpdateEvent — token-by-token streaming z LLM</li>
+                        <li class="next">RequestInfoEvent — workflow zatrzymany, czeka na input zewnętrzny (HITL)</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Custom events </li>
+                    <ol class="nonumbers">
+                        <li class="next">Dziedziczą po WorkflowEvent</li>
+                        <li class="next">Emitowane przez context.AddEventAsync()</li>
+                        <li class="next">Służą do obserwowalności i renderowania UI</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+      <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                        public sealed class ResearchCompletedEvent(ResearchResult result) : WorkflowEvent(result)
+                        {
+                            public ResearchResult Result => result;
+                        }
+
+                        await context.AddEventAsync(new ResearchCompletedEvent(result), cancellationToken);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Custom events </li>
+                    <ol class="nonumbers">
+                        <li class="next">Dziedziczą po WorkflowEvent</li>
+                        <li class="next">Emitowane przez context.AddEventAsync()</li>
+                        <li class="next">Służą do obserwowalności i renderowania UI</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+            <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Type-safe message routing
+        </span></span>
+    </section>
+                    <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Każdy executor deklaruje typy wejściowe i wyjściowe za pomocą generyków i atrybutów:
+        </span></span>
+    </section>
+          <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Program.cs — przykładowy kod</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 28px; overflow: hidden;">
+                    <code style="line-height: 28px !important;" class="language-cs">
+                       [YieldsOutput(typeof(ResearchResult))]
+                        public partial class ResearcherExecutor : Executor&lt;ResearchRequest, ResearchResult&gt;
+
+                        [SendsMessage(typeof(EditorialInput))]
+                        public partial class AggregatorExecutor() : Executor&lt;object&gt;(&quot;Aggregator&quot;)
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                  <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Custom events </li>
+                    <ol class="nonumbers">
+                        <li class="next">Type compatibility — czy typy wiadomości pasują między połączonymi executorami</li>
+                        <li class="next">Graph connectivity — czy wszystkie executory są osiągalne z executora startowego/li>
+                        <li class="next">Edge validation — brak duplikatów, brak nieprawidłowych połączeń</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                        <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+          Dlaczego MAF > Semantic Kernel
+        </span></span>
+    </section>
+                    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/tuTabela-02.png" alt="screenshot" />
+        </figure>
+    </section>
+                  <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Brak Kernel dependency — MAF buduje się na IChatClient, standardowym interfejsie z Microsoft.Extensions.AI. Zmiana providera = zamiana jednej linii. Middleware (rate limiting, retry, logging) z MEAI działa transparentnie. W SK trzeba było konfigurować konektory specyficzne dla frameworka.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                  <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Graph-based workflows — SK miał plannery (funkcyjny, sekwencyjny) ale nie miał prawdziwego grafu z executorami, fan-out/fan-in, barierami synchronizacji, typowaniem wiadomości. MAF daje pełną kontrolę nad przepływem z walidacją na etapie budowania.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                  <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Natywny HITL — SK nie miał wbudowanego mechanizmu human-in-the-loop. MAF ma RequestPort gwarantujący zatrzymanie workflow.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                  <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Lepsze narzędzia (tools) — w SK: stwórz klasę pluginu, dodaj atrybuty, zarejestruj w Kernel. W MAF: weź istniejącą metodę C#, owiń AIFunctionFactory.Create(). Albo podepnij narzędzia MCP. Albo załaduj Skills. Trzy ścieżki, zero boilerplate'u.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Agent Skills — modularna wiedza domenowa z progressive disclosure. SK nie miał odpowiednika — wszystko szło do system prompt.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Durable workflows — integracja z Azure Durable Functions: checkpointing, resume, HTTP endpoints dla HITL. Wystarczy .ConfigureDurableWorkflows().</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Lepsza obserwowalność — event streaming w real-time, natywna integracja z OpenTelemetry, wizualizacja w VS Code AI Toolkit. SK miał filtery, ale nie graph-level observability.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                      <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Dlaczego MAF > Semantic Kerne</li>
+                    <ol class="nonumbers">
+                        <li class="next">Mniej kodu — ten sam scenariusz w SK wymagał znacznie więcej plumbing code. MAF daje "zero boilerplate" — piszesz executory i graf, reszta jest obsługiwana.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+                      <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+           Kiedy SK nadal wygrywa (uczciwe porównanie)
+        </span></span>
+    </section>
+                          <section class="slide theme-dark tag-darkblue">
+        <span class="shout colors"><span>
+           Kiedy SK nadal wygrywa (uczciwe porównanie)
+        </span></span>
+    </section>
+                          <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/online-learning.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2"> Kiedy SK nadal wygrywa (uczciwe porównanie)</li>
+                    <ol class="nonumbers">
+                        <li class="next">SK ma dojrzalszy ekosystem pluginów, wbudowane wsparcie dla RAG/embeddingów/vector store, i większą bazę produkcyjnych wdrożeń. Dla istniejących projektów migracja ma sens dopiero gdy MAF pokryje brakujące feature'y. Ale dla nowych projektów — MAF jest rekomendowany.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/Graf-02.png" alt="screenshot" />
+        </figure>
     </section>
                 <section class="slide theme-dark tag-darkblue">
         <span class="shout colors"><span>
@@ -1573,55 +2262,55 @@
     <tbody>
       <tr>
         <td>Oficjalna dokumentacja MAF</td>
-        <td><a href="https://learn.microsoft.com/en-us/agent-framework/">https://learn.microsoft.com/en-us/agent-framework/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/">https://learn.microsoft.com/en-us/agent-framework/</a></td>
       </tr>
       <tr>
         <td>GA Release Blog (3 kwietnia 2026)</td>
-        <td><a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/">https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/">https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/</a></td>
       </tr>
       <tr>
         <td>Workflows Overview</td>
-        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/">https://learn.microsoft.com/en-us/agent-framework/workflows/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/">https://learn.microsoft.com/en-us/agent-framework/workflows/</a></td>
       </tr>
       <tr>
         <td>Executors &amp; Edges</td>
-        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/edges">https://learn.microsoft.com/en-us/agent-framework/workflows/edges</a></td>
+        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/edges">https://learn.microsoft.com/en-us/agent-framework/workflows/edges</a></td>
       </tr>
       <tr>
         <td>Workflow Builder &amp; Execution</td>
-        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/workflows">https://learn.microsoft.com/en-us/agent-framework/workflows/workflows</a></td>
+        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/workflows">https://learn.microsoft.com/en-us/agent-framework/workflows/workflows</a></td>
       </tr>
       <tr>
         <td>Human-in-the-Loop (HITL)</td>
-        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop">https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop</a></td>
+        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop">https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop</a></td>
       </tr>
       <tr>
         <td>Agent Skills</td>
-        <td><a href="https://learn.microsoft.com/en-us/agent-framework/agents/skills">https://learn.microsoft.com/en-us/agent-framework/agents/skills</a></td>
+        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/agents/skills">https://learn.microsoft.com/en-us/agent-framework/agents/skills</a></td>
       </tr>
       <tr>
         <td>Skills Blog Post</td>
-        <td><a href="https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/">https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/">https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/</a></td>
       </tr>
       <tr>
         <td>Durable Workflows Blog</td>
-        <td><a href="https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/">https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/">https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/</a></td>
       </tr>
       <tr>
         <td>Building Blocks Part 3 (.NET Blog)</td>
-        <td><a href="https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/">https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/">https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/</a></td>
       </tr>
       <tr>
         <td>Migracja z Semantic Kernel</td>
-        <td><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/">https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/">https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/</a></td>
       </tr>
       <tr>
         <td>SK → MAF FAQ</td>
-        <td><a href="https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/">https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/</a></td>
+        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/">https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/</a></td>
       </tr>
       <tr>
         <td>GitHub repo</td>
-        <td><a href="https://github.com/microsoft/agent-framework">https://github.com/microsoft/agent-framework</a></td>
+        <td><a target="_blank" rel="noopener" href="https://github.com/microsoft/agent-framework">https://github.com/microsoft/agent-framework</a></td>
       </tr>
     </tbody>
   </table>

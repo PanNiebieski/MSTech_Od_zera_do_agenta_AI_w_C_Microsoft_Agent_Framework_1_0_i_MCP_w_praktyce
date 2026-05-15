@@ -41,10 +41,11 @@
 .slide.layout-references .ref-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 11.5px;
+  font-size: 15px;
   line-height: 1.4;
   table-layout: fixed;
   margin-left: 0px;
+  margin-top: -40px;
 }
 
 /* ── Nagłówki kolumn ─────────────────────────────────────────────────────── */
@@ -86,7 +87,7 @@
 /* ── Linki ───────────────────────────────────────────────────────────────── */
 
 .slide.layout-references .ref-table a {
-  color:#0032d8)
+  color:#7897ff;
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-color: rgba(240, 192, 64, 0.4);
@@ -95,5 +96,6 @@
 }
 
 .slide.layout-references .ref-table a:hover {
-  text-decoration-color: var(--c-accent, #4052f0);
+  text-decoration-color:  #00ff6a;
+    color:#00ff6a;
 }
