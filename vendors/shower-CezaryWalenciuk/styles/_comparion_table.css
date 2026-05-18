@@ -91,6 +91,8 @@
 /* wyróżniona kolumna — żółty nagłówek */
 .slide.layout-comparison-table .ct-table thead th.ct-col-highlight {
   color: var(--c-accent);
+ color: var(--tag-blue);
+
 }
 
 /* ── Wiersze danych ──────────────────────────────────────────────────────── */
@@ -150,6 +152,16 @@
 .ct-pill--green {
   background: #3b6d11;
   color: #c0dd97;
+}
+
+.ct-pill--blue{
+  background: #0E65FF;
+  color: #97c7dd;
+}
+
+.ct-pill--purple{
+  background: #2E1A47;
+  color: #b897dd;
 }
 
 /* ── Strzałka ewolucji w thead (opcjonalna) ──────────────────────────────── */
