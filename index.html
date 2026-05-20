@@ -5598,9 +5598,11 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Brak zależności od Kernel</li>
                     <ol class="nonumbers">
-                        <li class="next">Brak zależności od Kernel: MAF buduje się na IChatClient, standardowym interfejsie z Microsoft.Extensions.AI. Zmiana providera = zmiana jednej linii. Middleware (rate limiting, retry, logging) z MEAI działa transparentnie. W SK trzeba było konfigurować konektory specyficzne dla frameworka.</li>
+                        <li class="next">MAF buduje się na IChatClient, standardowym interfejsie z Microsoft.Extensions.AI</li>
+                        <li class="next">Zmiana providera = zmiana jednej linii. Middleware (rate limiting, retry, logging) z MEAI działa transparentnie</li>
+                        <li class="next">W SK trzeba było konfigurować konektory specyficzne dla frameworka.</li>
                 </ol>
             </div>
         </div>
@@ -5612,9 +5614,12 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Executor jako czysta abstrakcja</li>
                     <ol class="nonumbers">
-                        <li class="next">Executor jako czysta abstrakcja: zamiast "agent robi wszystko", masz executory z jasnym kontraktem (typ wejścia → typ wyjścia). Kod jest czytelny, testowalny, reużywalny. W SK agent z 10 pluginami to monolit; w MAF to 10 executorów z jednym pluginem każdy.</li>
+                        <li class="next">Zamiast "agent robi wszystko", masz executory z jasnym kontraktem (typ wejścia => typ wyjścia)</li>
+                        <li class="next">Kod jest czytelny, testowalny, reużywalny</li>
+                        <li  class="next">W SK agent z 10 pluginami to monolit</li>
+                        <li  class="next">W MAF to 10 executorów z jednym pluginem każdy</li>
                 </ol>
             </div>
         </div>
@@ -5626,9 +5631,9 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Middleware na 3 poziomach</li>
                     <ol class="nonumbers">
-                        <li class="next">Middleware na 3 poziomach: SK miał filtry (prompt/function), ale bez wyraźnej separacji. MAF ma:</li>
+                        <li class="next">SK miał filtry (prompt/function), ale bez wyraźnej separacji. MAF ma:</li>
                          <li class="next">Agent Run Middleware (logowanie, retry, guardrails)</li>
                             <li class="next">Function Calling Middleware (audit, walidacja narzędzi)</li>
                                <li class="next">IChatClient Middleware (tracking tokenów). Każdy poziom to inny punkt interwencji.</li>
@@ -5643,9 +5648,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Graph-based workflows</li>
                     <ol class="nonumbers">
-                        <li class="next">Graph-based workflows: SK miał plannery (funkcyjny, sekwencyjny) ale nie miał prawdziwego grafu z executorami, fan-out/fan-in, barierami synchronizacji, typowaniem wiadomości. MAF daje pełną kontrolę nad przepływem z walidacją na etapie budowania.</li>
+                        <li class="next">SK miał plannery (funkcyjny, sekwencyjny) ale nie miał prawdziwego grafu z executorami, fan-out/fan-in, barierami synchronizacji, typowaniem wiadomości</li>
+                        <li class="next">MAF daje pełną kontrolę nad przepływem z walidacją na etapie budowania</li>
                 </ol>
             </div>
         </div>
@@ -5657,9 +5663,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Dependency Injection agentów</li>
                     <ol class="nonumbers">
-                        <li class="next">Dependency Injection agentów: w SK agent tworzył się wewnątrz kernela. W MAF agent jest wstrzykiwany z zewnątrz:</li>
+                        <li class="next">W SK agent tworzył się wewnątrz kernela</li>
+                        <li class="next">W MAF agent jest wstrzykiwany z zewnątrz</li>
                 </ol>
             </div>
         </div>
@@ -5671,9 +5678,9 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Streaming i eventy jako first-class:</li>
                     <ol class="nonumbers">
-                        <li class="next">Streaming i eventy jako first-class: w SK streaming był dolepiony. W MAF workflow produkuje strumień eventów (WatchStreamAsync()), które możesz konsumować w dowolny sposób (konsola, websocket, kolejka).</li>
+                        <li class="next">W MAF workflow produkuje strumień eventów (WatchStreamAsync()), które możesz konsumować w dowolny sposób (konsola, websocket, kolejka).</li>
                 </ol>
             </div>
         </div>
@@ -5685,9 +5692,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Natywny HITL</li>
                     <ol class="nonumbers">
-                        <li class="next">Natywny HITL: SK nie miał wbudowanego mechanizmu human-in-the-loop. MAF ma RequestPort gwarantujący zatrzymanie workflow.</li>
+                        <li class="next">SK nie miał wbudowanego mechanizmu human-in-the-loop.</li>
+                        <li class="next">MAF ma RequestPort gwarantujący zatrzymanie workflow.</li>
                 </ol>
             </div>
         </div>
@@ -5699,9 +5707,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Lepsze narzędzia (tools)</li>
                     <ol class="nonumbers">
-                        <li class="next">Lepsze narzędzia (tools): w SK: stwórz klasę pluginu, dodaj atrybuty, zarejestruj w Kernel. W MAF: weź istniejącą metodę C#, owiń AIFunctionFactory.Create(). Albo podepnij narzędzia MCP. Albo załaduj Skills. Trzy ścieżki, zero boilerplate'u.</li>
+                        <li class="next">W SK stwórz klasę pluginu, dodaj atrybuty, zarejestruj w Kernelu.</li>
+                        <li class="next">W MAF weź istniejącą metodę C#, owiń AIFunctionFactory.Create(). Albo podepnij narzędzia MCP. Albo załaduj Skills. Trzy ścieżki, zero boilerplate'u</li>
                 </ol>
             </div>
         </div>
@@ -5713,9 +5722,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Agent Skills</li>
                     <ol class="nonumbers">
-                        <li class="next">Agent Skills: modularna wiedza domenowa z progressive disclosure. SK nie miał odpowiednika: wszystko szło do system prompt.</li>
+                        <li class="next">Modularna wiedza domenowa z progressive disclosure</li>
+                        <li class="next">SK nie miał odpowiednika: wszystko szło do system prompt.</li>
                 </ol>
             </div>
         </div>
@@ -5727,9 +5737,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Durable workflows</li>
                     <ol class="nonumbers">
-                        <li class="next">Durable workflows: integracja z Azure Durable Functions: checkpointing, resume, HTTP endpoints dla HITL. Wystarczy .ConfigureDurableWorkflows().</li>
+                        <li class="next">Integracja z Azure Durable Functions: checkpointing, resume, HTTP endpoints dla HITL.</li>
+                        <li class="next">Wystarczy .ConfigureDurableWorkflows()</li>
                 </ol>
             </div>
         </div>
@@ -5741,9 +5752,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Lepsza obserwowalność</li>
                     <ol class="nonumbers">
-                        <li class="next">Lepsza obserwowalność: event streaming w real-time, natywna integracja z OpenTelemetry, wizualizacja w VS Code AI Toolkit. SK miał filtry, ale nie graph-level observability.</li>
+                        <li class="next">Event streaming w real-time, natywna integracja z OpenTelemetry, wizualizacja w VS Code AI Toolkit</li>
+                        <li class="next" >SK miał filtry, ale nie graph-level observability.</li>
                 </ol>
             </div>
         </div>
@@ -5755,9 +5767,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego MAF > Semantic Kernel</li>
+                    <li class="bold2">Mniej kodu </li>
                     <ol class="nonumbers">
-                        <li class="next">Mniej kodu: ten sam scenariusz w SK wymagał znacznie więcej plumbing code. MAF daje "zero boilerplate": piszesz executory i graf, reszta jest obsługiwana.</li>
+                        <li class="next">Ten sam scenariusz w SK wymagał znacznie więcej plumbing code.</li>
+                        <li class="next">MAF daje "zero boilerplate": piszesz executory i graf, reszta jest obsługiwana.</li>
                 </ol>
             </div>
         </div>
@@ -5777,7 +5790,9 @@
                 <ol class="nonumbers">
                     <li class="bold2"> Kiedy SK nadal wygrywa (uczciwe porównanie)</li>
                     <ol class="nonumbers">
-                        <li class="next">SK ma dojrzalszy ekosystem pluginów, wbudowane wsparcie dla RAG/embeddingów/vector store, i większą bazę produkcyjnych wdrożeń. Dla istniejących projektów migracja ma sens dopiero gdy MAF pokryje brakujące feature'y. Ale dla nowych projektów: MAF jest rekomendowany.</li>
+                        <li class="next">SK ma dojrzalszy ekosystem pluginów, wbudowane wsparcie dla RAG/embeddingów/vector store, i większą bazę produkcyjnych wdrożeń.</li>
+                        <li class="next">Dla istniejących projektów migracja ma sens dopiero gdy MAF pokryje brakujące feature'y.</li>
+                        <li class="next">Ale dla nowych projektów: MAF jest rekomendowany.</li>
                 </ol>
             </div>
         </div>
@@ -5825,83 +5840,484 @@
         </div>
     </div>
 </section>
-<section class="slide layout-references theme-dark">
- 
+    <section class="slide theme-dark fullscreen">
+        <div class="layout-hero">
+            <div class="hero-top"></div>
+            <div class="hero-center">
+                <h2><a target="_blank" rel="noopener" href="https://github.com/PanNiebieski/MAF_1_0_Final_Demo">Kod demo MAF 1.0</a></h2>
+            </div>
+            <div class="hero-bottom"></div>
+        </div>
+    </section>
+        <section class="slide theme-dark fullscreen">
+        <div class="layout-hero">
+            <div class="hero-top"></div>
+            <div class="hero-center">
+                <h2><a target="_blank" rel="noopener" href="https://github.com/PanNiebieski/PlayWright_MCP_Demo">Kod demo Playwright MCP + LLM</a></h2>
+            </div>
+            <div class="hero-bottom"></div>
+        </div>
+    </section>
 
+<!-- ══════════════════════════════════════════════════════════════
+     SLAJD 1 — Microsoft: oficjalne blogi
+     ══════════════════════════════════════════════════════════════ -->
+<section class="slide layout-references theme-dark">
+  <div class="ref-header">
+    <h2>Źródła i referencje</h2>
+  </div>
   <table class="ref-table">
     <thead>
       <tr>
-        <th>Źródło</th>
+        <th>Microsoft — oficjalne blogi</th>
         <th>Link</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Oficjalna dokumentacja MAF</td>
-        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/">https://learn.microsoft.com/en-us/agent-framework/</a></td>
+        <td>Ogłoszenie GA 1.0</td>
+        <td><a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/" target="_blank" rel="noopener">devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/</a></td>
       </tr>
       <tr>
-        <td>GA Release Blog (3 kwietnia 2026)</td>
-        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/">https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/</a></td>
+        <td>Building Blocks Part 3</td>
+        <td><a href="https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/" target="_blank" rel="noopener">devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/</a></td>
       </tr>
       <tr>
-        <td>Workflows Overview</td>
-        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/">https://learn.microsoft.com/en-us/agent-framework/workflows/</a></td>
+        <td>Release Candidate blog</td>
+        <td><a href="https://devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/" target="_blank" rel="noopener">devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/</a></td>
       </tr>
       <tr>
-        <td>Executors &amp; Edges</td>
-        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/edges">https://learn.microsoft.com/en-us/agent-framework/workflows/edges</a></td>
+        <td>AG-UI multi-agent demo</td>
+        <td><a href="https://devblogs.microsoft.com/agent-framework/ag-ui-multi-agent-workflow-demo/" target="_blank" rel="noopener">devblogs.microsoft.com/agent-framework/ag-ui-multi-agent-workflow-demo/</a></td>
       </tr>
       <tr>
-        <td>Workflow Builder &amp; Execution</td>
-        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/workflows">https://learn.microsoft.com/en-us/agent-framework/workflows/workflows</a></td>
+        <td>Agent Skills blog</td>
+        <td><a href="https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/" target="_blank" rel="noopener">devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise…</a></td>
       </tr>
       <tr>
-        <td>Human-in-the-Loop (HITL)</td>
-        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop">https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop</a></td>
+        <td>Durable Workflows blog</td>
+        <td><a href="https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/" target="_blank" rel="noopener">devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/</a></td>
       </tr>
       <tr>
-        <td>Agent Skills</td>
-        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/agents/skills">https://learn.microsoft.com/en-us/agent-framework/agents/skills</a></td>
+        <td>SK → MAF migracja FAQ</td>
+        <td><a href="https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/" target="_blank" rel="noopener">devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/</a></td>
       </tr>
       <tr>
-        <td>Skills Blog Post</td>
-        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/">https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/</a></td>
+        <td>Multi-agent na App Service</td>
+        <td><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/build-multi-agent-ai-apps-on-azure-app-service-with-microsoft-agent-framework-1-/4510017" target="_blank" rel="noopener">techcommunity.microsoft.com/…/build-multi-agent-ai-apps-on-azure-app-service…</a></td>
       </tr>
       <tr>
-        <td>Durable Workflows Blog</td>
-        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/">https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/</a></td>
+        <td>Deep-dive MAF 1.0</td>
+        <td><a href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/the-future-of-agentic-ai-inside-microsoft-agent-framework-1-0/4510698" target="_blank" rel="noopener">techcommunity.microsoft.com/…/the-future-of-agentic-ai-inside-microsoft-agent-framework-1-0/</a></td>
       </tr>
       <tr>
-        <td>Building Blocks Part 3 (.NET Blog)</td>
-        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/">https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/</a></td>
-      </tr>
-      <tr>
-        <td>Migracja z Semantic Kernel</td>
-        <td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/">https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/</a></td>
-      </tr>
-      <tr>
-        <td>SK → MAF FAQ</td>
-        <td><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/">https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/</a></td>
-      </tr>
-      <tr>
-        <td>GitHub repo</td>
-        <td><a target="_blank" rel="noopener" href="https://github.com/microsoft/agent-framework">https://github.com/microsoft/agent-framework</a></td>
+        <td>MAF + Foundry + MCP + Aspire</td>
+        <td><a href="https://developer.microsoft.com/blog/build-a-real-world-example-with-microsoft-agent-framework-microsoft-foundry-mcp-and-aspire" target="_blank" rel="noopener">developer.microsoft.com/blog/build-a-real-world-example-with-microsoft-agent-framework…</a></td>
       </tr>
     </tbody>
   </table>
- 
 </section>
- 
-    <section class="slide theme-gradient-green fullscreen">
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SLAJD 2 — Microsoft Learn: dokumentacja (część 1)
+     ══════════════════════════════════════════════════════════════ -->
+<section class="slide layout-references theme-dark">
+  <div class="ref-header">
+    <h2>Źródła i referencje</h2>
+  </div>
+  <table class="ref-table">
+    <thead>
+      <tr>
+        <th>Microsoft Learn — dokumentacja (1/2)</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Przegląd frameworka</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/overview/" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/overview/</a></td>
+      </tr>
+      <tr>
+        <td>Przegląd (pivot C#)</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/overview/?pivots=programming-language-csharp" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/overview/?pivots=programming-language-csharp</a></td>
+      </tr>
+      <tr>
+        <td>Workflows overview</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/workflows/</a></td>
+      </tr>
+      <tr>
+        <td>Human-in-the-Loop docs</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop</a></td>
+      </tr>
+      <tr>
+        <td>HITL (pivot C#)</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop?pivots=programming-language-csharp" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop?pivots=…csharp</a></td>
+      </tr>
+      <tr>
+        <td>Edges w grafie workflow</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/edges" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/workflows/edges</a></td>
+      </tr>
+      <tr>
+        <td>WorkflowBuilder docs</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/workflows/workflows" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/workflows/workflows</a></td>
+      </tr>
+      <tr>
+        <td>Agent Skills docs</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/agents/skills" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/agents/skills</a></td>
+      </tr>
+      <tr>
+        <td>Tool approval / HITL</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/agents/tools/tool-approval?pivots=programming-language-csharp" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/agents/tools/tool-approval?pivots=…csharp</a></td>
+      </tr>
+      <tr>
+        <td>Agent Middleware docs</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/user-guide/agents/agent-middleware" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/user-guide/agents/agent-middleware</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SLAJD 3 — Microsoft Learn: dokumentacja (część 2)
+     ══════════════════════════════════════════════════════════════ -->
+<section class="slide layout-references theme-dark">
+  <div class="ref-header">
+    <h2>Źródła i referencje</h2>
+  </div>
+  <table class="ref-table">
+    <thead>
+      <tr>
+        <th>Microsoft Learn — dokumentacja (2/2)</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HITL w orkiestracjach</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/user-guide/workflows/orchestrations/human-in-the-loop" target="_blank" rel="noopener">learn.microsoft.com/…/workflows/orchestrations/human-in-the-loop</a></td>
+      </tr>
+      <tr>
+        <td>MCP tools w agencie</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/user-guide/model-context-protocol/using-mcp-tools" target="_blank" rel="noopener">learn.microsoft.com/…/model-context-protocol/using-mcp-tools</a></td>
+      </tr>
+      <tr>
+        <td>Middleware termination</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/agents/middleware/termination" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/agents/middleware/termination</a></td>
+      </tr>
+      <tr>
+        <td>Dodawanie middleware</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/journey/adding-middleware" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/journey/adding-middleware</a></td>
+      </tr>
+      <tr>
+        <td>Migracja z Semantic Kernel</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/</a></td>
+      </tr>
+      <tr>
+        <td>AG-UI getting started C#</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/integrations/ag-ui/getting-started?pivots=programming-language-csharp" target="_blank" rel="noopener">learn.microsoft.com/…/integrations/ag-ui/getting-started?pivots=…csharp</a></td>
+      </tr>
+      <tr>
+        <td>AG-UI overview</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/integrations/ag-ui/" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/integrations/ag-ui/</a></td>
+      </tr>
+      <tr>
+        <td>DevUI docs</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/devui/" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/devui/</a></td>
+      </tr>
+      <tr>
+        <td>Hosting / ASP.NET setup</td>
+        <td><a href="https://learn.microsoft.com/en-us/agent-framework/get-started/hosting" target="_blank" rel="noopener">learn.microsoft.com/en-us/agent-framework/get-started/hosting</a></td>
+      </tr>
+      <tr>
+        <td>MAF hosting / deployment (DeepWiki)</td>
+        <td><a href="https://deepwiki.com/microsoft/agent-framework/5-deployment-and-hosting" target="_blank" rel="noopener">deepwiki.com/microsoft/agent-framework/5-deployment-and-hosting</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SLAJD 4 — GitHub: repozytoria i kod (część 1)
+     ══════════════════════════════════════════════════════════════ -->
+<section class="slide layout-references theme-dark">
+  <div class="ref-header">
+    <h2>Źródła i referencje</h2>
+  </div>
+  <table class="ref-table">
+    <thead>
+      <tr>
+        <th>GitHub — repozytoria i kod (1/2)</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Główne repo MAF</td>
+        <td><a href="https://github.com/microsoft/agent-framework" target="_blank" rel="noopener">github.com/microsoft/agent-framework</a></td>
+      </tr>
+      <tr>
+        <td>Repo z przykładami</td>
+        <td><a href="https://github.com/microsoft/Agent-Framework-Samples" target="_blank" rel="noopener">github.com/microsoft/Agent-Framework-Samples</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Agents</td>
+        <td><a href="https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents/Agents" target="_blank" rel="noopener">github.com/…/dotnet/samples/02-agents/Agents</a></td>
+      </tr>
+      <tr>
+        <td>Sample: AgentProviders</td>
+        <td><a href="https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents/AgentProviders" target="_blank" rel="noopener">github.com/…/dotnet/samples/02-agents/AgentProviders</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Workflows</td>
+        <td><a href="https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/03-workflows" target="_blank" rel="noopener">github.com/…/dotnet/samples/03-workflows</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Workflow Viz</td>
+        <td><a href="https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/03-workflows/Visualization" target="_blank" rel="noopener">github.com/…/dotnet/samples/03-workflows/Visualization</a></td>
+      </tr>
+      <tr>
+        <td>Sample: DevUI setup</td>
+        <td><a href="https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/GettingStarted/DevUI" target="_blank" rel="noopener">github.com/…/dotnet/samples/GettingStarted/DevUI</a></td>
+      </tr>
+      <tr>
+        <td>Sample: DevUI Program.cs</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/GettingStarted/DevUI/Program.cs" target="_blank" rel="noopener">github.com/…/GettingStarted/DevUI/Program.cs</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Declarative Agent</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/agent-samples/chatclient/GetWeather.yaml" target="_blank" rel="noopener">github.com/…/agent-samples/chatclient/GetWeather.yaml</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Multi-turn chat</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/01-get-started/03_multi_turn/Program.cs" target="_blank" rel="noopener">github.com/…/01-get-started/03_multi_turn/Program.cs</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SLAJD 5 — GitHub: repozytoria i kod (część 2)
+     ══════════════════════════════════════════════════════════════ -->
+<section class="slide layout-references theme-dark">
+  <div class="ref-header">
+    <h2>Źródła i referencje</h2>
+  </div>
+  <table class="ref-table">
+    <thead>
+      <tr>
+        <th>GitHub — repozytoria i kod (2/2)</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sample: Agent z Memory</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/01-get-started/04_memory/Program.cs" target="_blank" rel="noopener">github.com/…/01-get-started/04_memory/Program.cs</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Middleware</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/02-agents/Agents/Agent_Step11_Middleware" target="_blank" rel="noopener">github.com/…/02-agents/Agents/Agent_Step11_Middleware</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Tool Approvals</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/02-agents/Agents/Agent_Step01..." target="_blank" rel="noopener">github.com/…/02-agents/Agents/Agent_Step01…</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Agent + MCP</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/02-agents/ModelContextProtocol/Agent_MCP" target="_blank" rel="noopener">github.com/…/02-agents/ModelContextProtocol/Agent_MCP</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Agent Skills</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/02-agents/AgentSkills/Agent_Step01_BasicSkil" target="_blank" rel="noopener">github.com/…/02-agents/AgentSkills/Agent_Step01_BasicSkil</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Agent Workflow</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/03-workflows/_StartHere/03_AgentWorkflow" target="_blank" rel="noopener">github.com/…/03-workflows/_StartHere/03_AgentWorkflow</a></td>
+      </tr>
+      <tr>
+        <td>Sample: Custom Executors</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/03-workflows/Agents/CustomAgentExecutors/Program.cs" target="_blank" rel="noopener">github.com/…/CustomAgentExecutors/Program.cs</a></td>
+      </tr>
+      <tr>
+        <td>Sample: A2A Server</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/05-end-to-end/A2AClientServer/A2AServer/Program.cs" target="_blank" rel="noopener">github.com/…/A2AClientServer/A2AServer/Program.cs</a></td>
+      </tr>
+      <tr>
+        <td>Sample: A2A Client</td>
+        <td><a href="https://github.com/microsoft/agent-framework/blob/main/dotnet/samples/05-end-to-end/A2AClientServer/A2AClient/Program.cs" target="_blank" rel="noopener">github.com/…/A2AClientServer/A2AClient/Program.cs</a></td>
+      </tr>
+      <tr>
+        <td>Issue: DevUI + executory</td>
+        <td><a href="https://github.com/microsoft/agent-framework/issues/2084" target="_blank" rel="noopener">github.com/microsoft/agent-framework/issues/2084</a></td>
+      </tr>
+      <tr>
+        <td>Issue: WorkflowOutput bug</td>
+        <td><a href="https://github.com/microsoft/agent-framework/issues/2691" target="_blank" rel="noopener">github.com/microsoft/agent-framework/issues/2691</a></td>
+      </tr>
+      <tr>
+        <td>Dyskusja: DevUI workflow</td>
+        <td><a href="https://github.com/microsoft/agent-framework/discussions/2531" target="_blank" rel="noopener">github.com/microsoft/agent-framework/discussions/2531</a></td>
+      </tr>
+      <tr>
+        <td>Gist: DevUI wzorzec</td>
+        <td><a href="https://gist.github.com/wullemsb/70fae615a805dbfadbc51e53ea739101" target="_blank" rel="noopener">gist.github.com/wullemsb/70fae615a805dbfadbc51e53ea739101</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SLAJD 6 — NuGet: pakiety
+     ══════════════════════════════════════════════════════════════ -->
+<section class="slide layout-references theme-dark">
+  <div class="ref-header">
+    <h2>Źródła i referencje</h2>
+  </div>
+  <table class="ref-table">
+    <thead>
+      <tr>
+        <th>NuGet — pakiety</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Core agentów MAF</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Agents.AI" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Agents.AI</a></td>
+      </tr>
+      <tr>
+        <td>Workflow engine MAF</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Agents.AI.Workflows" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Agents.AI.Workflows</a></td>
+      </tr>
+      <tr>
+        <td>Source generator Roslyn</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Agents.AI.Workflows.Generators" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Agents.AI.Workflows.Generators</a></td>
+      </tr>
+      <tr>
+        <td>ASP.NET hosting MAF</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Agents.AI.Hosting" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Agents.AI.Hosting</a></td>
+      </tr>
+      <tr>
+        <td>DevUI debugger paczka</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Agents.AI.DevUI" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Agents.AI.DevUI</a></td>
+      </tr>
+      <tr>
+        <td>AG-UI ASP.NET hosting</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Agents.AI.Hosting.AGUI.AspNetCore" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Agents.AI.Hosting.AGUI.AspNetCore</a></td>
+      </tr>
+      <tr>
+        <td>Abstrakcja IChatClient</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Extensions.AI/" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Extensions.AI</a></td>
+      </tr>
+      <tr>
+        <td>MEAI adapter do OpenAI</td>
+        <td><a href="https://www.nuget.org/packages/Microsoft.Extensions.AI.OpenAI" target="_blank" rel="noopener">nuget.org/packages/Microsoft.Extensions.AI.OpenAI</a></td>
+      </tr>
+      <tr>
+        <td>MCP SDK dla C#</td>
+        <td><a href="https://www.nuget.org/packages/ModelContextProtocol" target="_blank" rel="noopener">nuget.org/packages/ModelContextProtocol</a></td>
+      </tr>
+      <tr>
+        <td>Klient OpenAI SDK</td>
+        <td><a href="https://www.nuget.org/packages/OpenAI" target="_blank" rel="noopener">nuget.org/packages/OpenAI</a></td>
+      </tr>
+      <tr>
+        <td>Klient Ollama (lokalne LLM)</td>
+        <td><a href="https://www.nuget.org/packages/OllamaSharp" target="_blank" rel="noopener">nuget.org/packages/OllamaSharp</a></td>
+      </tr>
+      <tr>
+        <td>Klient Anthropic/Claude</td>
+        <td><a href="https://www.nuget.org/packages/Anthropic" target="_blank" rel="noopener">nuget.org/packages/Anthropic</a></td>
+      </tr>
+      <tr>
+        <td>Wizualizacja grafów DOT</td>
+        <td><a href="https://www.nuget.org/packages/Graphviz" target="_blank" rel="noopener">nuget.org/packages/Graphviz</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SLAJD 7 — Artykuły zewnętrzne, AG-UI, MCP, narzędzia
+     ══════════════════════════════════════════════════════════════ -->
+<section class="slide layout-references theme-dark">
+  <div class="ref-header">
+    <h2>Źródła i referencje</h2>
+  </div>
+  <table class="ref-table">
+    <thead>
+      <tr>
+        <th>Artykuły zewnętrzne i narzędzia</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HITL practical guide</td>
+        <td><a href="https://blog.gopenai.com/human-in-the-loop-approvals-in-microsoft-agent-framework-a-practical-guide-f8b24e8b0279" target="_blank" rel="noopener">blog.gopenai.com/…/human-in-the-loop-approvals-in-microsoft-agent-framework…</a></td>
+      </tr>
+      <tr>
+        <td>MCP integration w C#</td>
+        <td><a href="https://www.devleader.ca/2026/03/04/mcp-tool-integration-in-microsoft-agent-framework-in-c" target="_blank" rel="noopener">devleader.ca/2026/03/04/mcp-tool-integration-in-microsoft-agent-framework-in-c</a></td>
+      </tr>
+      <tr>
+        <td>Tool Approval + HITL</td>
+        <td><a href="https://www.devleader.ca/2026/03/11/tool-approval-and-humanintheloop-in-microsoft-agent-framework" target="_blank" rel="noopener">devleader.ca/2026/03/11/tool-approval-and-humanintheloop-in-microsoft-agent-framework</a></td>
+      </tr>
+      <tr>
+        <td>GA 1.0 coverage</td>
+        <td><a href="https://visualstudiomagazine.com/articles/2026/04/06/microsoft-ships-production-ready-agent-framework-1-0-for-net-and-python.aspx" target="_blank" rel="noopener">visualstudiomagazine.com/…/microsoft-ships-production-ready-agent-framework-1-0…</a></td>
+      </tr>
+      <tr>
+        <td>MCP C# SDK v1 release</td>
+        <td><a href="https://www.dotnetstudioai.com/news/mcp-csharp-sdk-v1-released-dotnet/" target="_blank" rel="noopener">dotnetstudioai.com/news/mcp-csharp-sdk-v1-released-dotnet/</a></td>
+      </tr>
+      <tr>
+        <td>Fan-Out/Fan-In pattern</td>
+        <td><a href="https://www.linkedin.com/pulse/multiagent-orchestration-microsoft-agent-framework-maf-choudhury-im0oe" target="_blank" rel="noopener">linkedin.com/pulse/multiagent-orchestration-microsoft-agent-framework-maf…</a></td>
+      </tr>
+      <tr>
+        <td>AG-UI frontend tutorial</td>
+        <td><a href="https://www.copilotkit.ai/blog/build-a-frontend-for-your-microsoft-agent-framework-agents-with-ag-ui" target="_blank" rel="noopener">copilotkit.ai/blog/build-a-frontend-for-your-microsoft-agent-framework-agents-with-ag-ui</a></td>
+      </tr>
+      <tr>
+        <td>AG-UI dokumentacja</td>
+        <td><a href="https://docs.ag-ui.com/introduction" target="_blank" rel="noopener">docs.ag-ui.com/introduction</a></td>
+      </tr>
+      <tr>
+        <td>AG-UI Interactive Dojo</td>
+        <td><a href="https://dojo.ag-ui.com/microsoft-agent-framework-dotnet/feature/agentic.chat" target="_blank" rel="noopener">dojo.ag-ui.com/microsoft-agent-framework-dotnet/feature/agentic.chat</a></td>
+      </tr>
+      <tr>
+        <td>MCP C# SDK quickstart</td>
+        <td><a href="https://csharp.sdk.modelcontextprotocol.io/concepts/getting-started.html" target="_blank" rel="noopener">csharp.sdk.modelcontextprotocol.io/concepts/getting-started.html</a></td>
+      </tr>
+      <tr>
+        <td>.NET Agents newsletter</td>
+        <td><a href="https://dotnetagents.substack.com" target="_blank" rel="noopener">dotnetagents.substack.com</a></td>
+      </tr>
+      <tr>
+        <td>Podgląd diagramów Mermaid</td>
+        <td><a href="https://mermaid.live" target="_blank" rel="noopener">mermaid.live</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+         <section class="slide theme-dark fullscreen">
         <div class="layout-hero">
             <div class="hero-top"></div>
             <div class="hero-center">
-                <h2>Dziękuję!</h2>
+                <h2><a target="_blank" rel="noopener" href="https://github.com/PanNiebieski/PlayWright_MCP_Demo">Link doprezentacji</a></h2>
             </div>
             <div class="hero-bottom"></div>
         </div>
-    </section>
+
 
     <!-- ═══════════════════════════════════════════════════════════════════
          SCRIPTS : All unchanged
