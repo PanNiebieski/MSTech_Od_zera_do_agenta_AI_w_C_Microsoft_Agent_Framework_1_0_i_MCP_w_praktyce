@@ -87,7 +87,7 @@
   background: transparent;
   color: transparent;   /* pusta komórka narożna */
 }
-
+ 
 /* wyróżniona kolumna — żółty nagłówek */
 .slide.layout-comparison-table .ct-table thead th.ct-col-highlight {
   color: var(--c-accent);

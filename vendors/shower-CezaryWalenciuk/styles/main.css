@@ -29,3 +29,17 @@
 @import url('./_slide-decor.css');
 @import url('./callout.css');
 @import url('./_data_table.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_tokens.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_base.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_slide-themes.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_slide-layouts.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_components.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_code.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_front-page.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_utilities.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_comparison-table.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_agent-diagrams.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_references.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_slide-decor.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_callout.css');
+@import url('/vendors/shower-CezaryWalenciuk/styles/_data-table.css');
