@@ -2556,7 +2556,7 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego to jest ważne:</li>
+                    <li class="bold2">Co to daje:</li>
                     <ol class="nonumbers">
                         <li class="next">Walidacja krawędzi: AddEdge(researcher, copywriter) jest sprawdzane w compile-time: czy output Researchera (ResearchResult) pasuje do inputu Copywritera (ResearchResult)</li>
                         <li class="next">Dokumentacja w kodzie: atrybuty na klasie od razu mówią co executor produkuje i co wysyła:</li>
@@ -2571,7 +2571,7 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego to jest ważne:</li>
+                    <li class="bold2">Co to daje:</li>
                     <ol class="nonumbers">
                         <li class="next">Błędy w compile-time, nie w runtime: jeśli podłączysz executor, który oczekuje DraftPost do executora produkującego ResearchResult, dostaniesz błąd kompilacji, nie wyjątek w runtime po 30 sekundach pracy pipeline'u.</li>
                         <li class="next">Dokumentacja w kodzie: atrybuty na klasie od razu mówią co executor produkuje i co wysyła:</li>
@@ -2586,7 +2586,7 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Dlaczego to jest ważne:</li>
+                    <li class="bold2">Co to daje:</li>
                     <ol class="nonumbers">
                         <li class="next">Zero boilerplate'u: nie piszesz ręcznie kodu rejestracji, serializacji, deserializacji typów w grafie. Generator to robi za Ciebie.</li>
                         <li class="next">Refactoring-safe : zmiana typu (np. dodanie pola do ResearchResult) propaguje się automatycznie. Kompilator powie Ci wszędzie, gdzie coś się zepsuło.</li>
@@ -2628,7 +2628,7 @@
 
                               <section class="slide layout-callout theme-dark">
         <div class="callout-box">
-            <p> MAF wykorzystuje source generatory C# do generowania kodu routingu wiadomości w compile-time. 
+            <p> MAF automatycznie generuje kod połączeń między elementami workflow już podczas kompilacji.
                 <br /><br />
                 To mechanizm, w którym kompilator analizuje atrybuty na executorach i automatycznie tworzy dodatkowy kod C#, który zapewnia type-safety przepływu danych w grafie workflow.
               
@@ -2640,7 +2640,7 @@
 
                                                 <section class="slide layout-callout theme-dark">
         <div class="callout-box">
-            <p>     Każda strzałka to typowany kontrakt weryfikowany w compile-time przez wygenerowany kod. Żadna wiadomość nie "zgubi się" ani nie trafi do niewłaściwego executora.
+            <p>     Każde połączenie między elementami jest sprawdzane przez kompilator. Żadna wiadomość nie "zgubi się" ani nie trafi do niewłaściwego executora.
               
 
         </p><br/>
@@ -5860,7 +5860,7 @@
     </section>
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 1 — Microsoft: oficjalne blogi
+     SLAJD 1 : Microsoft: oficjalne blogi
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-references theme-dark">
   <div class="ref-header">
@@ -5869,7 +5869,7 @@
   <table class="ref-table">
     <thead>
       <tr>
-        <th>Microsoft — oficjalne blogi</th>
+        <th>Microsoft : oficjalne blogi</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -5920,7 +5920,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 2 — Microsoft Learn: dokumentacja (część 1)
+     SLAJD 2 : Microsoft Learn: dokumentacja (część 1)
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-references theme-dark">
   <div class="ref-header">
@@ -5929,7 +5929,7 @@
   <table class="ref-table">
     <thead>
       <tr>
-        <th>Microsoft Learn — dokumentacja (1/2)</th>
+        <th>Microsoft Learn : dokumentacja (1/2)</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -5980,7 +5980,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 3 — Microsoft Learn: dokumentacja (część 2)
+     SLAJD 3 : Microsoft Learn: dokumentacja (część 2)
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-references theme-dark">
   <div class="ref-header">
@@ -5989,7 +5989,7 @@
   <table class="ref-table">
     <thead>
       <tr>
-        <th>Microsoft Learn — dokumentacja (2/2)</th>
+        <th>Microsoft Learn : dokumentacja (2/2)</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -6040,7 +6040,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 4 — GitHub: repozytoria i kod (część 1)
+     SLAJD 4 : GitHub: repozytoria i kod (część 1)
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-references theme-dark">
   <div class="ref-header">
@@ -6049,7 +6049,7 @@
   <table class="ref-table">
     <thead>
       <tr>
-        <th>GitHub — repozytoria i kod (1/2)</th>
+        <th>GitHub : repozytoria i kod (1/2)</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -6100,7 +6100,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 5 — GitHub: repozytoria i kod (część 2)
+     SLAJD 5 : GitHub: repozytoria i kod (część 2)
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-references theme-dark">
   <div class="ref-header">
@@ -6109,7 +6109,7 @@
   <table class="ref-table">
     <thead>
       <tr>
-        <th>GitHub — repozytoria i kod (2/2)</th>
+        <th>GitHub : repozytoria i kod (2/2)</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -6172,7 +6172,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 6 — NuGet: pakiety
+     SLAJD 6 : NuGet: pakiety
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-references theme-dark">
   <div class="ref-header">
@@ -6181,7 +6181,7 @@
   <table class="ref-table">
     <thead>
       <tr>
-        <th>NuGet — pakiety</th>
+        <th>NuGet : pakiety</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -6244,7 +6244,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 7 — Artykuły zewnętrzne, AG-UI, MCP, narzędzia
+     SLAJD 7 : Artykuły zewnętrzne, AG-UI, MCP, narzędzia
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-references theme-dark">
   <div class="ref-header">
